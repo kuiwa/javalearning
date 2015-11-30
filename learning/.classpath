@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry excluding="cc/openhome/" kind="src" path="Chapter4/src"/>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -12,8 +13,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="Chapter4/src"/>
-	<classpathentry kind="src" path="Chapter5/src"/>
+	<classpathentry kind="src" path="cc.openhome1"/>
+	<classpathentry excluding="Chapter4/src/|src/main/java/|src/test/java/|cc.openhome1/|Chapter4/src/cc/openhome/" kind="src" path=""/>
+	<classpathentry kind="src" path="Chapter4/src/cc/openhome"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
