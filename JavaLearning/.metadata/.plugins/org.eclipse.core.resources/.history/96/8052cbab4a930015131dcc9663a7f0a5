@@ -1,0 +1,21 @@
+package cc.openhome;
+import java.util.Scanner;
+
+public class Guess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int number = (int) (Math.random() * 10);
+		int guess;
+		
+		do {
+			System.out.print("guess one number from 0 ~ 9:");
+			guess = scanner.nextInt();
+		}	while(guess != number);
+		
+		System.out.println("Bingo!");
+		
+	}
+
+}

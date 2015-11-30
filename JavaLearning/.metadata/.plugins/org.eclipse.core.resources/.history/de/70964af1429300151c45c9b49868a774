@@ -1,0 +1,28 @@
+package hello;
+
+public class hello {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World!");
+		System.out.printf("%6d ~ %6d%n", Byte.MIN_VALUE, Byte.MAX_VALUE);
+		System.out.printf("%6d ~ %6d%n", Short.MIN_VALUE, Short.MAX_VALUE);
+		int number1 = 2015_1125;
+		System.out.println(number1);
+		int score = 50;
+		System.out.printf("该学生是否及格?%c%n", score >= 60 ? '是' : '否');
+		float PI = 3.14F;
+		System.out.println(PI);
+		short a = 1;
+		short b = 2;
+		short c = (short) (a + b);
+		System.out.println(c);
+		System.out.println(10 / 3);
+		//float radius = 88.2;
+		byte a2 = 100;
+		//byte b2 = 200;
+		System.out.println(Integer.MAX_VALUE + 1 == Integer.MAX_VALUE);
+		System.out.println(-Integer.MAX_VALUE == Integer.MAX_VALUE);
+	}
+
+}

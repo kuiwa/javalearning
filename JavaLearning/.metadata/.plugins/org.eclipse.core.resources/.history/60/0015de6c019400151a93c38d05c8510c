@@ -1,0 +1,15 @@
+package cc.openhome;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 100;
+		int y = 100;
+		Integer wx = x;
+		Integer wy = y;
+		System.out.println(x == y);
+		System.out.println(wx == xy);
+	}
+
+}
