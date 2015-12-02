@@ -1,10 +1,10 @@
 package cc.openhome;
 
-
-public class Role {
-    private String name;
-    private int level;
-    private int blood;
+//public class Role {
+public abstract class Role {
+    protected String name;
+    protected int level;
+    protected int blood;
     
     public int getBlood()  {
         return blood;
@@ -24,5 +24,10 @@ public class Role {
     public void setName(String name)    {
         this.name = name;
     }
-    
+    public abstract void fight();
+    //public void fight()   {
+    //}
+    public String toString()    {
+        return String.format("(%s, %d, %d)%n", this.name, this.level, this.blood);
+    }
 }
