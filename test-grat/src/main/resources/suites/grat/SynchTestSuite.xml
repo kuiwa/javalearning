@@ -1,0 +1,25 @@
+<suite name="SynchTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Synch Test">
+		<classes>
+		 	<class name="com.ericsson.msran.test.grat.synch.SynchRegulationLoopTest">
+				<methods>
+					<include name="synchRegulationLoop">
+						<parameter name="testId" value="GRAT Sequence: Synchronization Regulation Loop" />
+						<parameter name="testDescription" value="Verify that the timing of the synch regulation loop works" />
+                        <parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="FAJ 122 081" />
+                        <parameter name="Test slogan" value="Verify that the timing of the synch regulation loop works" />
+                        <parameter name="NODEUC" value="NodeUC509.N" />
+                        <parameter name="NODEUC" value="NodeUC510.N" />
+                        <parameter name="NODEUC" value="NodeUC511.N" />
+                        <parameter name="NODEUC" value="NodeUC512.N" />
+                        <parameter name="NODEUC" value="NodeUC513.N" />							
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

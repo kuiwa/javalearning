@@ -1,0 +1,71 @@
+<suite name="AbisLinkBreakTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Bsc Disconnected Reconnected Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscDisconnectedReconnected">
+				<methods>
+					<include name="bscDisconnectedReconnect" >
+						<parameter name="testId" value="LTE00207268"/>
+					    <parameter name="description" value="Bsc disconnected and then reconnected"/>
+					    <parameter name="QA" value="ROBUSTNESS" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Bsc disconnected and then reconnected" />
+						<parameter name="NODEUC" value="NodeUC524.N" />
+						<parameter name="NODEUC" value="NodeUC524.A1" />
+						<parameter name="NODEUC" value="NodeUC524.A3" />		
+					</include>
+				</methods>
+			</class>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscDisconnectsL2">
+				<methods>
+					<include name="bscDisconnectsL2Reconnect" >
+						<parameter name="testId" value="LTE00207270"/>
+						<parameter name="description" value="Detect and report that BSC disconnects L2, then re-connect and establish links" />
+						<parameter name="QA" value="ROBUSTNESS" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Detect and report that BSC disconnects L2, then re-connect and establish links" />
+                        <parameter name="NODEUC" value="NodeUC524.A2" />
+                        <parameter name="NODEUC" value="NodeUC524.A1" />
+                    	<parameter name="NODEUC" value="NodeUC524.A3" />		
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Bsc Link Released And Established Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscLinkReleasedAndEstablishedTest">
+				<methods>
+					<include name="bscLinkReleasedAndEstablishedTest" >
+                    	<parameter name="testId" value="LTE00207272"/>
+						<parameter name="description" value="BSC link released and reestablished"/>
+						<parameter name="QA" value="ROBUSTNESS" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="BSC link released and reestablished" />
+                        <parameter name="NODEUC" value="NodeUC524.A3" />
+						<parameter name="NODEUC" value="NodeUC524.A4" />                        						
+				    </include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="O&amp;M Link break detection">
+    <classes>
+      <class name="com.ericsson.msran.test.grat.abislinkbreak.AbisLinkBreakAutomaticDetection">
+        <methods>
+          <include name="abisLinkBreakAutomaticDetectionTest" >
+          		<parameter name="testId" value="LTE00230564"/>
+            	<parameter name="description" value="Automatic Detection of OML link break"/>
+                <parameter name="QA" value="ROBUSTNESS"/>
+                <parameter name="FAJ" value="N/A" />
+	            <parameter name="Test slogan" value="Automatic Detection of OML link break"/>
+                <parameter name="NODEUC" value="NodeUC524.A5" />
+            </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

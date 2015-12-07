@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="BbLogStoring" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="BBLogStoringTest1">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.bblog.BbLogTest">
+				<methods>
+					<include name="storeBbLog">
+						<parameter name="testId" value="GRAT000012"/>
+						<parameter name="description" value="Store Logs for gcpu00512"/>
+						<parameter name="gcpuband" value="gcpu00512"/>
+						<parameter name="reboot" value="true" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

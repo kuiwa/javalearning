@@ -1,0 +1,77 @@
+<suite name="UnlockLockTrxLinks" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+  	<test name="UnlockLockTrxLinksTest ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=1">
+  		<meta name="suiteGenInput">
+  			<parameter name="deliverycheck" value="include"/>
+			<parameter name="status" value="legacy"/>
+  		</meta>
+		<classes>		
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxEstablishedLinksTest">
+				<methods>				
+    				<include name="lockUnlockTrxWithLinks" >
+						<parameter name="testId" value="LTE00207358"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX after establishing links." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock TRX - Lock TRX after establishing links." />
+						<parameter name="NODEUC" value="NodeUC426.N" />			
+						<parameter name="NODEUC" value="NodeUC428.N" />									
+					</include>
+					<include name="lockUnlockTrxWithLinks2" >
+						<parameter name="testId" value="LTE00207358"/>
+						<parameter name="description" value="Establish links, Unlock TRX, Release links, Lock TRX." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Establish links, Unlock TRX, Release links, Lock TRX." />
+						<parameter name="NODEUC" value="NodeUC426.N" />						
+						<parameter name="NODEUC" value="NodeUC428.A2" />
+					</include>
+					<include name="unlockTrxAndLockUnlockSectorEquipmentFunc1" >
+						<parameter name="testId" value="LTE00230980"/>
+						<parameter name="description" value="Unlock-Lock Trx with Lock-Unlock SectorEquipmentFunction"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock-Lock Trx with Lock-Unlock SectorEquipmentFunction" />
+                        <parameter name="NODEUC" value="NodeUC426.A6" />
+                        <parameter name="NODEUC" value="NodeUC426.N" />
+					</include>	
+ 					<include name="unlockTrxAndLockUnlockSectorEquipmentFunc2" >
+						<parameter name="testId" value="LTE00230987"/>
+						<parameter name="description" value="Unlock Trx and Lock-Unlock SectorEquipmentFunction"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock Trx and Lock-Unlock SectorEquipmentFunction" />
+                        <parameter name="NODEUC" value="NodeUC426.A6" />
+                        <parameter name="NODEUC" value="NodeUC663.N" />
+					</include>
+					<include name="unlockTrxAndLockUnlockSectorEquipmentFunc3" >
+						<parameter name="testId" value="LTE00230987"/>
+						<parameter name="description" value="Unlock two Trxes and Lock-Unlock SectorEquipmentFunction"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock two Trxes and Lock-Unlock SectorEquipmentFunction" />
+                        <parameter name="NODEUC" value="NodeUC426.A6" />
+                        <parameter name="NODEUC" value="NodeUC663.N" />
+					</include>
+
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxReleasedLinksTest">
+				<methods>
+					<include name="lockUnlockTrxWithReleasedLinks" >
+						<parameter name="testId" value="LTE00207457"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX after establish-release links." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock TRX - Lock TRX after establish-release links." />
+						<parameter name="NODEUC" value="NodeUC426.A3" />
+						<parameter name="NODEUC" value="NodeUC428.A2" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

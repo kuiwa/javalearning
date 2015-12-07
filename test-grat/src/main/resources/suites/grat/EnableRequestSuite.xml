@@ -1,0 +1,135 @@
+<suite name="EnableRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Enable Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.enablerequest.EnableRequestTest">
+				<methods>
+					<include name="enableRequestAoTf">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TF Enable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Enable" />
+						<parameter name="NODEUC" value="NodeUC513.N" />	 	
+					</include>
+					<include name="enableRequestAoTx">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TX Enable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Enable" />
+						<parameter name="NODEUC" value="NodeUC602.N" />	 	
+					</include>
+					<include name="enableRequestAoTxInStateEnabled">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TX Enable in MO State = ENABLED"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Enable in MO State = ENABLED" />
+						<parameter name="NODEUC" value="NodeUC602.A1" />	 							
+					</include>
+					<include name="enableRequestAoTxInvalidConfig">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TX Enable with invalid configuration"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Enable with invalid configuration" />
+						<parameter name="NODEUC" value="NodeUC602.E1" />	 	
+					</include>
+					<include name="enableRequestAoRx">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis RX Enable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Enable" />
+						<parameter name="NODEUC" value="NodeUC607.N" />	 							
+					</include>
+					<include name="enableRequestAoRxInStateEnabled">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis RX Enable in MO State = ENABLED"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Enable in MO State = ENABLED" />
+						<parameter name="NODEUC" value="NodeUC607.A1" />	 	
+					</include>
+					<include name="enableRequestAoRxInvalidConfig">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis RX Enable with invalid configuration"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Enable with invalid configuration" />
+						<parameter name="NODEUC" value="NodeUC607.E1" />	 	
+					</include>
+					<include name="enableRequestAoTxNoFrequency">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TX Enable with invalid configuration"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Enable with invalid configuration" />
+						<parameter name="NODEUC" value="NodeUC607.E1" />	 							
+					</include>
+					<include name="enableRequestAllAoTs">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TS Enable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Enable" />
+						<parameter name="NODEUC" value="NodeUC627.N" />	 							
+					</include>
+					<include name="enableRequestAoTsInvalidConfig_TimeSlotAlreadyUsed">
+						<parameter name="testId" value="LTE00207343"/>
+						<parameter name="description" value="Abis TS Enable, invalid configuration - time slot already used"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Enable, invalid configuration - time slot already used" />
+						<parameter name="NODEUC" value="NodeUC627.E2" />	 	
+					</include>
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.enablerequest.EnableDisableAtRequestTest">
+				<methods>
+					<include name="enableDisableRequestAoAtNoTrx">
+						<parameter name="testId" value="LTE00207334"/>
+						<parameter name="description" value="Abis AT Enable - no unlocked Trx, Abis AT Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AT Enable - no unlocked Trx, Abis AT Disable" />
+						<parameter name="NODEUC" value="NodeUC646.N" />
+						<parameter name="NODEUC" value="NodeUC647.N" />	 							
+					</include>	
+					<include name="enableDisableRequestAoAtWithTrx">
+						<parameter name="testId" value="LTE00207334"/>
+						<parameter name="description" value="Abis AT Enable - with unlocked Trx, Abis AT Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AT Enable - with unlocked Trx, Abis AT Disable" />
+						<parameter name="NODEUC" value="NodeUC646.A1" />
+						<parameter name="NODEUC" value="NodeUC647.N" />	 							
+					</include>
+                    <include name="enableDisableRequestAoAtWrongSoScfState">
+                        <parameter name="testId" value="LTE00207334"/>
+                        <parameter name="description" value="Abis AT Enable and Disable, when So Scf is in state RESET"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AT Enable and Disable, when So Scf is in state RESET" />
+						<parameter name="NODEUC" value="NodeUC479.E2" />	 	                        
+                    </include>				
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.enablerequest.EnableSlaveTfNotSyncWithMasterTest">
+				<methods>
+					<include name="enableSlaveTfNotSyncWithMaster">
+						<parameter name="testId" value="LTE00223067"/>
+						<parameter name="description" value="Abis TF Enable, TF Mode = Slave and not aligned with Master"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Enable, TF Mode = Slave and not aligned with Master" />
+						<parameter name="NODEUC" value="NodeUC513.E1" />						
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

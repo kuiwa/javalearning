@@ -1,0 +1,103 @@
+<suite name="ResetCommandSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Reset Command Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.resetcommand.ResetCommandTest">
+				<methods>  
+					<include name="resetCommandSoScf">
+						<parameter name="testId" value="LTE00207461"/>
+						<parameter name="description" value="Abis OML Reset Command EP on SO SCF."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Reset Command EP on SO SCF." />
+						<parameter name="NODEUC" value="NodeUC477.N" />
+					</include>  
+					<include name="resetCommandAoTf">
+						<parameter name="testId" value="LTE00207461,LTE00223060"/>
+						<parameter name="description" value="Abis TF Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Reset." />
+						<parameter name="NODEUC" value="NodeUC510.N" />
+						<parameter name="NODEUC" value="NodeUC479.E2" />
+					</include>
+					<include name="resetCommandAoTx">
+						<parameter name="testId" value="LTE00207461"/>
+						<parameter name="description" value="Abis TX Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Reset." />
+						<parameter name="NODEUC" value="NodeUC599.N" />						
+					</include>
+					<include name="resetCommandAoRx">
+						<parameter name="testId" value="LTE00207461"/>
+						<parameter name="description" value="Abis RX Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Reset." />
+						<parameter name="NODEUC" value="NodeUC604.N" />						
+					</include>
+					<include name="resetCommandAllAoTs">
+						<parameter name="testId" value="LTE00207461"/>
+						<parameter name="description" value="Abis TS Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Reset." />
+						<parameter name="NODEUC" value="NodeUC623.N" />
+					</include>
+					<include name="resetCommandAllAoTs_InEnabledState">
+						<parameter name="testId" value="LTE00207461"/>
+						<parameter name="description" value="Abis TS Reset, TS in state ENABLED."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Reset, TS in state ENABLED." />
+						<parameter name="NODEUC" value="NodeUC623.N" />						
+					</include>
+                    <include name="resetCommandSoTrxc">
+                        <parameter name="testId" value="LTE00207461"/>
+                        <parameter name="description" value="Abis TRXC Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TRXC Reset." />
+						<parameter name="NODEUC" value="NodeUC653.N" />                        
+                    </include>
+                    <include name="resetCommandAoAt">
+                        <parameter name="testId" value="LTE00207461"/>
+                        <parameter name="description" value="Abis AT Reset."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AT Reset." />
+						<parameter name="NODEUC" value="NodeUC643.N" />
+						<parameter name="NODEUC" value="NodeUC479.E2" />
+                    </include>			
+                    <include name="resetCommandSoTrxcWithOtherThanOperationalCondition">
+                        <parameter name="testId" value="LTE00230809"/>
+                        <parameter name="description" value="Abis Trxc Reset With Not Operational."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis Trxc Reset With Not Operational." />
+						<parameter name="NODEUC" value="NodeUC653.N" />						
+                    </include>
+                    <include name="resetCommandAoRxWithOtherThanOperationalCondition">
+                        <parameter name="testId" value="LTE00230813"/>
+                        <parameter name="description" value="Abis AoRX Reset With Not Operational."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AoRx Reset With Not Operational." />
+						<parameter name="NODEUC" value="NodeUC604.N" />						
+                    </include>
+                    <include name="resetCommandAoTxWithOtherThanOperationalCondition">
+                        <parameter name="testId" value="LTE00230804"/>
+                        <parameter name="description" value="Abis AoTX Reset With Not Operational."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AoTx Reset With Not Operational." />
+						<parameter name="NODEUC" value="NodeUC599.N" />						
+                    </include>		
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

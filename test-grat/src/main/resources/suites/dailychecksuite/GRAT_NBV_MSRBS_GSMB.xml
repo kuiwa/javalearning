@@ -1,0 +1,41 @@
+<suite name="GRAT NBV towards MSSIM GSMB" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+        <listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+	<suite-files>
+		<suite-file path="../grat/CascadedRusTestSuite.xml" />
+		<suite-file path="../grat/DetectedChannelRequestTestSuite.xml" />
+		<suite-file path="../grat/ImmediateAssignmentExtendedTestSuite.xml" />
+		<suite-file path="../grat/LinkEstablishIndicationConEstTestSuite.xml" />
+        <suite-file path="../grat/LinkEstablishIndicationNorEstTestSuite.xml" />
+        <suite-file path="../grat/FrequencyHoppingTestSuite.xml" />
+        <suite-file path="../grat/InitialFrameAlignmentTestSuite.xml" />
+        <suite-file path="../grat/DynamicFrameAlignmentTestSuite2.xml" />
+        <suite-file path="../grat/SmsPointToPointTestSuite.xml" />
+        <suite-file path="../grat/PacketSwitchedData.xml" />
+
+        <!-- Below tests have been moved temporarily from "ordinary" NBV flow (DailyTest_GRAT.xml) -->
+        <suite-file path="../grat/LockUnlockTrxTestSuite.xml" />
+        <suite-file path="../grat/ModuleCheckTestSuite.xml" />
+        <suite-file path="../grat/MultipleGsmSectorsWithMultipleTrxesSuite.xml" />
+        <suite-file path="../grat/NodeIdentityExchangeRequestSuite.xml" />
+        <suite-file path="../grat/RadioChannelsRelease.xml" />
+        <suite-file path="../grat/RestartRecoverSuite.xml" />
+        <suite-file path="../grat/ResetCommandSuite.xml" />
+        <!-- <suite-file path="../grat/ResourceAllocationSuite.xml" /> -->
+        <suite-file path="../grat/ShutDownTrxTestSuite.xml" />
+        <suite-file path="../grat/SoftwareCheckTestSuite.xml" />
+        <suite-file path="../grat/StartRequestSuite.xml" />
+        <suite-file path="../grat/StatusRequestSuite.xml" />
+        <suite-file path="../grat/SynchTestSuite.xml" />
+        <suite-file path="../grat/StopSynchTestSuite.xml" />
+        <suite-file path="../grat/TerrestrialLinkSupervision.xml" />
+        <suite-file path="../grat/UnlockLockTrxLinksSuite.xml" />
+        <suite-file path="../grat/UnlockLockTrxWithLockedAbisIp.xml" />
+        <suite-file path="../grat/UnlockLockTrxWithoutLinks.xml" />
+        <suite-file path="../grat/UpdateAbisIpAttributeTestSuite.xml" />
+        <!-- Above tests have been moved temporarily from "ordinary" NBV flow (DailyTest_GRAT.xml) -->
+	</suite-files>
+</suite>

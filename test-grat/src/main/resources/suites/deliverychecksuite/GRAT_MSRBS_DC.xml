@@ -1,0 +1,19 @@
+<suite name="GRAT Delivery Check(DC)" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+
+	<suite-files>
+
+		<!-- <suite-file path="RBSNC_DC_common.xml" /> -->
+		<!--  Mandatory tests end here  -->
+
+		<suite-file path="GRAT_DC_no-NC-tests.xml" />
+
+	</suite-files>
+	<!--  Don't add tests here  add them here instead GRAT_DC_no-NC-test.xml-->
+</suite>
+
+	

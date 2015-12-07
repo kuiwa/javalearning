@@ -1,0 +1,20 @@
+<suite name="ShutDownTrx" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="ShutDownTrx your LDN">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.shutdowntrx.ShutDownTrxTest">
+				<methods>
+					<include name="shutdownTrxTest" />
+					<parameter name="testId" value="NodeUC427.N"/>
+					<parameter name="description" value="Shut Down TRX." />
+					<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+					<parameter name="FAJ" value="N/A" />
+					<parameter name="Test slogan" value="Shut Down TRX." />
+					<parameter name="NODEUC" value="NodeUC427.N" />					
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

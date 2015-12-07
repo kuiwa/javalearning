@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="MSPowerActiveChanneltesting" parallel="false"
+	rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="Set up call, change the default power and do the verification ">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.powercontrol.MSPowerControlActiveChannel">
+				<methods>
+					<include name="ActiveChannelTesting">
+						<parameter name="testId" value="NodeUCXXX.N" />
+						<parameter name="description"
+							value="Setup call and change the power level from default and the verification" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

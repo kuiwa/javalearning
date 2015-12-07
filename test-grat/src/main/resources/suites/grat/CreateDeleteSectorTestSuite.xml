@@ -1,0 +1,39 @@
+<suite name="CreateDeleteSectorTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+    </listeners>
+    <test name="CreateSectorTest ManagedElement=1,BtsFunction=1,GsmSector=1">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.createdeletesector.CreateDeleteSectorTest">
+                <methods>               
+                    <include name="createDeleteSector" >
+                        <parameter name="testId" value="LTE00207303,LTE00223056"/>
+                        <parameter name="description" value="Create GSM Sector - Delete GSM Sector" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create GSM Sector - Delete GSM Sector" />
+						<parameter name="NODEUC" value="NodeUC419.N" />
+						<parameter name="NODEUC" value="NodeUC420.N" />	                          
+                    </include>
+	                <include name="deleteSectorWithLockedChildren" >
+                        <parameter name="testId" value="LTE00207303"/>
+	                	<parameter name="description" value="Delete GSM Sector (with locked child MOs)"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Delete GSM Sector (with locked child MOs)" />
+						<parameter name="NODEUC" value="NodeUC420.N" />	  	                	
+                    </include>
+	               	<include name="deleteSectorWithChildrenFails" >
+	               	    <parameter name="testId" value="LTE00207303"/>
+	               	    <parameter name="description" value="Delete GSM Sector with referring MOs" />
+	               	    <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Delete GSM Sector with referring MOs" />
+						<parameter name="NODEUC" value="NodeUC420.E1" />	  
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>  
+</suite>
+

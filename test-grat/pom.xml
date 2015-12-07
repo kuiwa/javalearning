@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	
+	<artifactId>test-grat</artifactId>
+	<!--version>0.0.1-SNAPSHOT</version-->
+	<version>${test.grat.version}</version>
+	<packaging>jar</packaging>
+
+	<name>test-grat</name>
+	<url>http://maven.apache.org</url>
+  
+  <parent>
+        <groupId>com.ericsson.msran.test</groupId>
+        <artifactId>mje-test-parent</artifactId>
+        <version>0.0.11</version>
+    </parent>
+
+
+  <distributionManagement>
+        <site>
+            <id>common_jcat_site</id>
+            <name>Common JCAT Site</name>
+            <url>${site.scp}/${project.artifactId}/${project.version}</url>
+        </site>
+    </distributionManagement>
+<scm>
+        <url>${scm.http}${scm.repository}.git</url>
+        <connection>${scm.ssh}/${scm.repository}</connection>
+        <developerConnection>${scm.ssh}/${scm.repository}</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+  <properties>
+    <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.checkstyle.generateXml>true</sonar.checkstyle.generateXml>
+    <sonar.pmd.generateXml>true</sonar.pmd.generateXml> -->
+    <scm.repository>grat/${project.artifactId}</scm.repository>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.ericsson.msr</groupId>
+      <artifactId>abisco-clientlib</artifactId>
+      <version>R15C</version>
+    </dependency>
+
+    <dependency>
+       <groupId>com.ericsson.msran.jcat</groupId>
+       <artifactId>msran-jcat-extension-with-dependencies</artifactId>
+       <version>1.6.149</version>
+       <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1</version>
+        <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.2</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
+  

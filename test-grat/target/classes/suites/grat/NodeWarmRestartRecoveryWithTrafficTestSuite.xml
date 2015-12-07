@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="restart_node_and_tss" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="WarmRestartNodeRecoveryWithTrafficTest">
+		<classes>   
+			<class name="com.ericsson.msran.test.grat.warmrestartnode.WarmRestartNodeRecoveryWithTrafficTest">
+				<methods>
+					<include name="warmRestartNodeRecoveryWithTrafficTest">
+						<parameter name="testId" value="LTE00237433"/>
+						<parameter name="description" value="Setup traffic again after Warm Restart"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

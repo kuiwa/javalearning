@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [restart_node_and_tss]">
+  <listeners>
+    <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+  </listeners>
+  <test name="RestartNodeTest1(failed)">
+    <classes>
+      <class name="com.ericsson.msran.test.grat.restartnode.RestartNodeTest">
+        <methods>
+          <include name="restartNode" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ericsson.msran.test.grat.restartnode.RestartNodeTest -->
+    </classes>
+  </test> <!-- RestartNodeTest1(failed) -->
+</suite> <!-- Failed suite [restart_node_and_tss] -->

@@ -1,0 +1,23 @@
+<suite name="FirstCallSetupSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+    </listeners>
+
+    <test name="Configure Radio resources">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.configsv.RadioResActivation">
+                <methods>
+                    <include name="configRadioTest">
+                        <parameter name="testId" value="NodeUCXXX.N"/>
+                        <parameter name="description" value="Configure RR and send sysInfo"/>
+                        <parameter name="noTrxsInGsmSector" value="12"/> <!-- Total Trx number -->
+                        <parameter name="cellNumber" value="1"/> <!-- Total sector/TG nuber -->
+                        <parameter name="bcchNoList" value="107"/> <!-- bcchNo for each sector , if you have more than 1 cell, use "," to divide-->
+                        <parameter name="trxDistributionList" value="0,11"/> <!-- eg: 0,3;0,3;0,3 means create Trx0-Trx3 for first sector, create Trx0-Trx3 for second sector, Trx number should start from 0 -->
+                        <parameter name="trxsectorDistributionList" value="0,3,1:4,7,2:8,11,3"/> <!-- eg: 0,3,1:4,7,2;0,3,3 means create Trx0 -Trx7 for first sector, Trx0-Trx3 ref is SectorEquipmentFunction=1, Trx4-Trx7 ref is SectorEquipmentFunction=2, create Trx0-Trx3 for second sector, ref is SectorEquipmentFunction=3 -->
+                    </include>
+                </methods>
+           </class>
+        </classes>
+    </test>
+</suite>

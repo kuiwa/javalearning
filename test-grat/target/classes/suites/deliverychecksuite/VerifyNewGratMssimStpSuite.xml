@@ -1,0 +1,56 @@
+<suite name="GRAT DC - Without NC tests" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+
+    <test name="Verify RU/Sector OK">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.LockUnlockTrxTest">
+                <methods>   
+                    <include name="lockUnlockTrx" >
+                        <parameter name="testId" value="Verify RU/Sector OK"/>
+                        <parameter name="description" value="Unlock TRX - Lock TRX" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Verify RU/Sector OK" />
+                        <parameter name="NODEUC" value="NodeUC426.N" />
+                        <parameter name="NODEUC" value="NodeUC428.N" />
+                    </include>                          
+                </methods>
+            </class>
+        </classes>
+    </test> 
+
+    <test name="Verify Abisco is up and running and connectable from BTS">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.lockunlockabisip.LockUnlockAbisIpTest">
+                <methods>                                   
+                    <include name="unlockLockUnlockAbisIp">
+                        <parameter name="testId" value="Verify Abisco is up and running and connectable from BTS"/>
+                        <parameter name="description" value="Unlock, lock, unlock AbisIp" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Verify Abisco is up and running and connectable from BTS" />
+                        <parameter name="NODEUC" value="NodeUC459.N" />
+                        <parameter name="NODEUC" value="NodeUC461.N" />                             
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test> 
+
+    <test name="Verify MSSIM and RF connections">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.channelrequest.DetectedChannelRequest">
+                <methods>
+                    <include name="detectedChannelRequestTest" />
+                         <parameter name="testId" value="Verify MSSIM and RF connections"/>
+                         <parameter name="description" value="Verify MSSIM and RF connections"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

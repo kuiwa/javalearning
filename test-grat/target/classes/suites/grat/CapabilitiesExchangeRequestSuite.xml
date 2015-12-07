@@ -1,0 +1,61 @@
+<suite name="CapabilitiesExchangeRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Capabilities Exchange Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.capabilitiesexchangerequest.CapabilitiesExchangeRequestTest">
+				<methods>
+					<include name="capabilitiesExchangeRequestSoScf">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Capabilities Exchange Request EP for SO SCF"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Capabilities Exchange Request EP for SO SCF" />
+                        <parameter name="NODEUC" value="NodeUC514.A1" />								
+					</include>
+					<include name="capabilitiesExchangeRequestSoScfNotStarted">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Capabilities Exchange Request without started SO SCF"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Capabilities Exchange Request without started SO SCF" />
+                        <parameter name="NODEUC" value="NodeUC479.E2" />	
+					</include>
+					<include name="capabilitiesExchangeRequestWrongSpState">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Abis SP fault handling for SCF"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis SP fault handling for SCF" />
+                        <parameter name="NODEUC" value="NodeUC481.E1" />							
+					</include>
+					<include name="capabilitiesExchangeRequestSoTrxc">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Capabilities Exchange Request EP for SO TRXC"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Capabilities Exchange Request EP for SO TRXC" />
+                        <parameter name="NODEUC" value="NodeUC514.A1" />	
+					</include>
+					<include name="capabilitiesExchangeRequestSoTrxcNotStarted">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Capabilities Exchange Request without started SO TRXC"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Capabilities Exchange Request without started SO TRXC" />
+                        <parameter name="NODEUC" value="NodeUC479.E2" />	
+					</include>
+					<include name="capabilitiesExchangeRequestTrxcWrongSpState">
+						<parameter name="testId" value="LTE00207278"/>
+						<parameter name="description" value="Abis SP fault handling for TRXC"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis SP fault handling for TRXC" />
+                        <parameter name="NODEUC" value="NodeUC481.E1" />	
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

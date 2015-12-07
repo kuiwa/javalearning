@@ -1,0 +1,32 @@
+<suite name="ResourceAllocationSuite" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Resource allocation with 4 Trxes">
+		<classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.ResourceAllocationTest">
+                <methods>   
+                    <include name="resourceAllocationWithMultipleTrxs" >
+                        <parameter name="testId" value="UC419.N, UC420.N, UC424.N, UC425.N, UC426.A4, UC428.N, UC457.N, UC458.N , UC459.N, UC461.N"/>
+                        <parameter name="description" value="Test resource allocation with one GsmSector with 4 Trxes" />
+                        <parameter name="gsmSectorToTrxsMapping" value="0:4" />
+                        <parameter name="rebootNode" value="false" />
+                    </include>
+                </methods>
+            </class>
+		</classes>
+	</test> 
+	<!-- test name="Resource allocation failure">
+		<classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.ResourceAllocationTest">
+                <methods>   
+                    <include name="resourceAllocationFailure" >
+                        <parameter name="testId" value="UC419.N, UC420.N, UC424.N, UC425.N, UC426.A4, UC428.N, UC457.N, UC458.N , UC459.N, UC461.N"/>
+                        <parameter name="description" value="Test resource allocation failure with two GsmSector with 6 Trxes each" />
+                    </include>
+                </methods>
+            </class>
+		</classes>
+	</test --> 
+	
+</suite>

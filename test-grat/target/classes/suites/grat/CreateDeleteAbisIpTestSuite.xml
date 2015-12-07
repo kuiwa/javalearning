@@ -1,0 +1,47 @@
+<suite name="CreateDeleteAbisIpTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="CreateDeleteAbisIpTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.createdeleteabisip.CreateDeleteAbisIpTest">
+				<methods>
+					<include name="createDeleteAbisIp" >
+						<parameter name="testId" value="LTE00204697"/>
+						<parameter name="description" value="Create AbisIp - Delete AbisIp" />   
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create AbisIp - Delete AbisIp" />
+						<parameter name="NODEUC" value="NodeUC457.N" />
+						<parameter name="NODEUC" value="NodeUC458.N" />							
+					</include>
+					<include name="createDeleteAbisIpWithConnectionNameIsEmpty" >
+						<parameter name="testId" value="LTE00204697"/>
+						<parameter name="description" value="Create AbisIp - Delete AbisIp with empty Connection Name" />                                         
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create AbisIp - Delete AbisIp with empty Connection Name" />
+						<parameter name="NODEUC" value="NodeUC457.N" />
+						<parameter name="NODEUC" value="NodeUC458.N" />							
+					</include>	
+					<include name="deleteAbisIpFails" >
+						<parameter name="testId" value="NodeUC458.E1"/>
+						<parameter name="description" value="Delete unlocked AbisIp" />                                         
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Delete unlocked AbisIp" />
+						<parameter name="NODEUC" value="NodeUC458.E1" />							
+					</include>
+					<include name="createAbisIpFails" >
+						<parameter name="testId" value="NodeUC457.E1"/>
+						<parameter name="description" value="Create AbisIp with invalid ipv4AddressRef" />                                         
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create AbisIp with invalid ipv4AddressRef" />
+						<parameter name="NODEUC" value="NodeUC457.E1" />							
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

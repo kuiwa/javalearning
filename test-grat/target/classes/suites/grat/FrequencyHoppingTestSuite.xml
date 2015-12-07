@@ -1,0 +1,41 @@
+<suite name="FrequencyHoppingTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+    <test name="Synth Frequency Hopping Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.frequencyhopping.FrequencyHopping">
+                <methods>
+                    <include name="hoppingTest">
+                        <parameter name="testId" value="LTE00235608"/>
+                        <parameter name="description" value="Verify Frequency Hopping using Synth Hop"/>
+                        <parameter name="hoppingType" value="synth" />
+                        <parameter name="numOfFreqs" value="4" />
+                        <parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="FAJ 122 288" />
+                        <parameter name="Test slogan" value="Verify Frequency Hopping using Synth Hop" />
+                        <parameter name="NODEUC" value="N/A" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Baseband Frequency Hopping Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.frequencyhopping.FrequencyHopping">
+                <methods>
+                    <include name="hoppingTest">
+                        <parameter name="testId" value="LTE00235609"/>
+                        <parameter name="description" value="Verify Frequency Hopping using Baseband Hop"/>
+                        <parameter name="hoppingType" value="baseband" />
+                        <parameter name="numOfFreqs" value="4" />
+                        <parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="FAJ 122 288" />
+                        <parameter name="Test slogan" value="Verify Frequency Hopping using Baseband Hop" />
+                        <parameter name="NODEUC" value="N/A" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

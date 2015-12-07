@@ -1,0 +1,20 @@
+<suite name="BSPowerAtChannelActivationSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="BSPowerAtChannelActivation">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.bspowercontrol.BSPowerAtChannelActivation">
+				<methods>
+					<include name="bsPowerAtChannelActivation">
+						<parameter name="testId" value="LTE00234904"/>
+						<parameter name="description" value="Setup call MT with BS Power, measure and check BS power."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Setup call MT with BS Power, measure and check BS power." />
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

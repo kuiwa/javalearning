@@ -1,0 +1,61 @@
+<suite name="DisableRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Disable Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.disablerequest.DisableRequestTest">
+				<methods>
+					<include name="disableRequestAoTf">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis TF Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Disable" />
+						<parameter name="NODEUC" value="NodeUC511.N" />	 		
+					</include>
+					<include name="disableRequestAoTx">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis TX Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Disable" />
+						<parameter name="NODEUC" value="NodeUC600.N" />	 								
+					</include>
+					<include name="disableRequestAoTxInStateDisabled">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis TX Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Disable" />
+						<parameter name="NODEUC" value="NodeUC600.A1" />	 								
+					</include>    
+					<include name="disableRequestAoRx">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis RX Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Disable" />
+						<parameter name="NODEUC" value="NodeUC605.N" />	 								
+					</include>
+					<include name="disableRequestAoRxInStateDisabled">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis RX Disable when already disabled"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Disable when already disabled" />
+						<parameter name="NODEUC" value="NodeUC605.A1" />	 		
+					</include>    
+					<include name="disableRequestAllAoTs">
+						<parameter name="testId" value="LTE00207315"/>
+						<parameter name="description" value="Abis TS Disable"/>
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Disable" />
+						<parameter name="NODEUC" value="NodeUC625.N" />	 								
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

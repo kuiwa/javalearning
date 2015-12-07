@@ -1,0 +1,17 @@
+<suite name="ImmediateAssignmentExtendedTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Immediate Assignment Extended Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.immediateassign.ImmediateAssignmentExtended">
+				<methods>
+					<include name="immediateAssignmentExtendedTest" />
+                         <parameter name="testId" value="GRAT-03.01:14"/>
+					     <parameter name="description" value="Verify the Immediate Assignment Extended function"/>
+					     <parameter name="useDefaultSector" value="true"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

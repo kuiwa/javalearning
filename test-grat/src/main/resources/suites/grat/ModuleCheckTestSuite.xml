@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="LoadModuleCheck" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+ 	
+	<test name="ModuleCheckTests">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.modulecheck.ModuleCheckTest">
+				<methods>
+					<include name="checkLoadModule"/>
+					<parameter name="testId" value="GRAT000007"/>
+					<parameter name="description" value="To Check Whether the GTE LoadModule is Started"/>
+					<parameter name="loadModule" value="GTE Started"/>
+					<parameter name="numberOfOccurances" value="2"/>
+                                        <parameter name="reboot" value="true" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+  <test name="GTERegisterTest">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.modulecheck.ModuleCheckTest">
+				<methods>
+					<include name="checkLoadModule"/>
+					<parameter name="testId" value="GRAT000008"/>
+					<parameter name="description" value="To Check Whether GTE is Registered with GOAM"/>
+					<parameter name="loadModule" value="Received register gte"/>
+					<parameter name="numberOfOccurances" value="2"/>
+                    <parameter name="reboot" value="false" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+ 	<test name="GBBLoading">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.modulecheck.ModuleCheckTest">
+				<methods>
+					<include name="checkLoadModule"/>
+					<parameter name="testId" value="GRAT000009"/>
+					<parameter name="description" value="To see that the GBB has loaded"/>
+					<parameter name="loadModule" value="BBI EQMHI load Instance"/>
+					<parameter name="numberOfOccurances" value="1"/>
+                    <parameter name="reboot" value="false" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GBBBoot">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.modulecheck.ModuleCheckTest">
+				<methods>
+					<include name="checkLoadModule"/>
+					<parameter name="testId" value="GRAT000010"/>
+					<parameter name="description" value="To see that the GBB has booted"/>
+					<parameter name="loadModule" value="BBI EQMHI boot Instance"/>
+					<parameter name="numberOfOccurances" value="1"/>
+                    <parameter name="reboot" value="false" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GBBPingRsp">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.modulecheck.ModuleCheckTest">
+				<methods>
+					<include name="checkLoadModule"/>
+					<parameter name="testId" value="GRAT000011"/>
+					<parameter name="description" value="To see that the GBB has booted"/>
+					<parameter name="loadModule" value="Received DSPSW_RSP_PING_RLY from GBB"/>
+					<parameter name="numberOfOccurances" value="1"/>
+                    <parameter name="reboot" value="false" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

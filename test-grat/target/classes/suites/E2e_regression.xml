@@ -1,0 +1,14 @@
+<suite name="CPP regression suite" parallel="false">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.actions.api.ActionListener" />
+	</listeners>
+
+
+	<test name="E2e regression tests">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.E2eTest">
+			</class>
+		</classes>
+	</test>
+</suite>

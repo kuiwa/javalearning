@@ -1,0 +1,244 @@
+<suite name="GRAT Hourly Check(HC)" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+	<parameter name="tm.mailon" value="ERROR" />
+	<parameter name="tm.mailto" value="rbs6000gen2-ci-support@mailman.lmera.ericsson.se"/>
+	<parameter name="tm.testsuiteid" value="GRAT Hourly Test"/> 
+	<parameter name="tm.up" value="MSRBS-PPC-CXP9023001_1" /> 
+	
+
+	
+	<!-- Common DC TC's -->
+
+<!-- xrscamo 2014-05-08: disabled until stable in DC
+
+	<test name="BasebandLoadingTest loadBasebandTest">
+		<classes>
+			<class name="com.ericsson.msran.test.equipmenthandling.RERC_Sequence_A_LoadingBBTest">
+				<methods>
+					<include name="loadBasebandTest">
+						<parameter name="testId" value="LTE00107662" />
+						<parameter name="description" value="RERC Sequence: Loading BBM" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Testsuite for Sector &amp; Carrier Group Handling with Single Radio">
+		<classes>
+			<class name="com.ericsson.msran.test.sectorcarriergrouphandling.RANSF024NAddSectorTest">
+				<methods>
+					<include name="testNormal">
+						<parameter name="testId" value="LTE00103104" />
+						<parameter name="description" value="RANSF024.N - Add Sector" />
+					</include>
+				</methods>
+			</class>
+			<class
+				name="com.ericsson.msran.test.sectorcarriergrouphandling.RANSF026NUnlockSectorTest">
+				<methods>
+					<include name="testNormal">
+						<parameter name="testId" value="LTE00103106" />
+						<parameter name="description" value="RANSF064.N - Unlock Sector" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="RANSF051NCreateAuxPIU Test">
+		<classes>
+			<class
+				name="com.ericsson.msran.test.equipmenthandling.RANSF051NCreateAuxPIUTest">
+				<methods>
+					<include name="test">
+						<parameter name="testId" value="LTE00103108" />
+						<parameter name="description" value="RANSF051.N - Create Aux PIU" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Restart AuxPiu">
+	  <classes>
+	    <class name="com.ericsson.msran.test.equipmenthandling.RANSF015NRestartAuxPiuTest">
+	      <methods>
+		<include name="testNormal">
+		  <parameter name="testId" value="RestartAuxPlugin" />
+		  <parameter name="description" value="Restart AUX Plugin Unit" />
+		</include>
+	      </methods>
+	    </class>
+	  </classes>
+	</test> 
+-->
+
+<!-- enikoka: these tests are now not included at all
+    <test name="Reset Command Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.resetcommand.ResetCommandTest">
+                <methods>
+                    <include name="resetCommandSoScf">
+                        <parameter name="testId" value="NodeUC477.N"/>
+                        <parameter name="description" value="Abis OML Reset Command EP on SO SCF"/>
+                    </include>
+                    <include name="resetCommandAoTf">
+                        <parameter name="testId" value="NodeUC510.N"/>
+                        <parameter name="description" value="Abis TF Reset"/>
+                    </include>
+                    <include name="resetCommandAoTx">
+                        <parameter name="testId" value="NodeUC599.N"/>
+                        <parameter name="description" value="Abis TX Reset"/>
+                    </include>
+                    <include name="resetCommandAoRx">
+                        <parameter name="testId" value="NodeUC604.N"/>
+                        <parameter name="description" value="Abis RX Reset"/>
+                    </include>                  
+                    <include name="resetCommandAllAoTs">
+                        <parameter name="testId" value="NodeUC623.N"/>
+                        <parameter name="description" value="Abis TS Reset"/>
+                    </include>              
+                    <include name="resetCommandSoTrxc">
+                        <parameter name="testId" value="NodeUC653.N"/>
+                        <parameter name="description" value="Abis TRXC Reset"/>
+                    </include>
+                    <include name="resetCommandAoAt">
+                        <parameter name="testId" value="NodeUC643.N"/>
+                        <parameter name="description" value="Abis AT Reset"/>
+                    </include>      
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RestartNode_5">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.restartnode.RestartNodeTest">
+                <methods>
+                    <include name="restartNode">
+                        <parameter name="testId" value="GRAT000000"/>
+                        <parameter name="description" value="Restart Node and make sure everything starts up correctly"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Configuration Request Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.configurationrequest.ConfigurationRequestTest">
+                <methods>
+                    <include name="tfConfigurationRequest">
+                        <parameter name="testId" value="NodeUC512.N"/>
+                        <parameter name="description" value="Abis TF Configuration"/>
+                    </include>
+enikoka: these tests are now not included at all -->	
+                    <!-- Exclude until we have nodes configured with sync MO's in G2-CI -->
+                    <!--include name="tfConfigurationRequestFsOffset">
+                        <parameter name="testId" value="NodeUC512.E1"/>
+                        <parameter name="description" value="Abis TF Configuration with defined FS offset and no Time Synchronization on the RBS"/>
+                    </include-->
+<!-- enikoka: these tests are now not included at all
+                    <include name="txConfigurationRequest">
+                        <parameter name="testId" value="NodeUC601.N"/>
+                        <parameter name="description" value="Abis TX Configuration"/>
+                    </include>
+                    <include name="txConfigurationRequestInStateEnabledValid">
+                        <parameter name="testId" value="NodeUC601.A1"/>
+                        <parameter name="description" value="Abis TX Configuration in state enabled"/>
+                    </include>
+                    <include name="txConfigurationRequestInStateEnabledInvalid">
+                        <parameter name="testId" value="NodeUC601.E2"/>
+                        <parameter name="description" value="Abis TX Configuration in state enabled"/>
+                    </include>
+                    <include name="rxConfigurationRequest">
+                        <parameter name="testId" value="NodeUC606.N"/>
+                        <parameter name="description" value="Abis RX Configuration"/>
+                    </include>
+                    <include name="rxConfigurationRequestInStateEnabledValid">
+                        <parameter name="testId" value="NodeUC606.A1"/>
+                        <parameter name="description" value="Valid Abis RX Configuration in state enabled"/>
+                    </include>
+                    <include name="rxConfigurationRequestInStateEnabledInvalid">
+                        <parameter name="testId" value="NodeUC606.E2"/>
+                        <parameter name="description" value="Invalid Abis RX Configuration in state enabled"/>
+                    </include>
+                    <include name="tsConfigurationRequest_MainBCCHCombined">
+						<parameter name="testId" value="NodeUC626.N"/>
+						<parameter name="description" value="Abis TS Configuration, combination MainBCCHCombined"/>
+					</include>
+					<include name="tsConfigurationRequest_MainBCCH">
+						<parameter name="testId" value="NodeUC626.N"/>
+						<parameter name="description" value="Abis TS Configuration, combination MainBCCH"/>
+					</include>       
+					<include name="tsConfigurationRequest_OptionalBCCH">
+						<parameter name="testId" value="NodeUC626.N"/>
+						<parameter name="description" value="Abis TS Configuration, combination OptionalBCCH"/>
+					</include>
+					<include name="tsConfigurationRequest_SDCCH">
+						<parameter name="testId" value="NodeUC626.N"/>
+						<parameter name="description" value="Abis TS Configuration, combination SDCCH"/>
+					</include>   
+					<include name="tsConfigurationRequest_TCH">
+						<parameter name="testId" value="NodeUC626.N"/>
+						<parameter name="description" value="Abis TS Configuration, combination TCH"/>
+					</include>          
+					<include name="tsConfigurationRequestInStateEnabledValid_TCH">
+						<parameter name="testId" value="NodeUC626.A1"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, valid configuration, combination TCH"/>
+					</include>
+					<include name="tsConfigurationRequestInStateEnabledInvalid_TCH">
+						<parameter name="testId" value="NodeUC626.A1"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination TCH"/>
+					</include>
+					<include name="tsConfigurationRequestInStateEnabledInvalid_MainBCCHCombined">
+						<parameter name="testId" value="NodeUC626.A1"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination MainBCCHCombined"/>
+					</include>                    
+                </methods>
+            </class>
+        </classes>
+    </test>
+	
+	<test name="Abort SP Command Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.abortspcommand.AbortSpCommandTest">
+				<methods>
+					<include name="abortSpCommandTest">
+						<parameter name="testId" value="RANUC481.A2"/>
+						<parameter name="description" value="Abis downlink SP, completion after Abort SP Command"/>
+					</include>
+				</methods>                        
+			</class>
+		</classes>
+	</test>
+	
+  	<test name="Synch Test">
+		<classes>
+		 	<class name="com.ericsson.msran.test.grat.synch.SynchRegulationLoopTest">
+				<methods>
+					<include name="synchRegulationLoop">
+						<parameter name="testId" value="GRAT Sequence: Synchronization Regulation Loop" />
+						<parameter name="testDescription" value="Verify that the timing of the synch regulation loop works" />
+					</include>
+				</methods>
+			</class>
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.synch.SynchStartupTest">
+				<methods>
+					<include name="synchStartup">
+						<parameter name="testId" value="GRAT Sequence: Synchronization Startup" />
+						<parameter name="testDescription" value="Verify that the subscription to global radio clock changes works" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+enikoka: these tests are now not included at all -->		
+</suite>

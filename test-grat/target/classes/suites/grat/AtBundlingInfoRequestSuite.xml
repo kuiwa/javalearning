@@ -1,0 +1,23 @@
+<suite name="AtBundlingInfoRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="AT Bundling Info Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.atbundlinginforequest.AtBundlingInfoRequestTest">
+				<methods>
+					<include name="atBundlingInfoRequest">
+						<parameter name="testId" value="LTE00207274"/>
+						<parameter name="description" value="Abis AT Bundling Info Request"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis AT Bundling Info Request" />
+                        <parameter name="NODEUC" value="NodeUC648.N" />
+						<parameter name="NODEUC" value="NodeUC479.E2" />
+						<parameter name="NODEUC" value="NodeUC479.E1" />                        
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

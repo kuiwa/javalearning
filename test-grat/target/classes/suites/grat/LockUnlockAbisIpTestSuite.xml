@@ -1,0 +1,166 @@
+<suite name="LockUnlockAbisIp" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+    <test name="L2TP redirect links tests">
+		<classes>
+		    <class name="com.ericsson.msran.test.grat.lockunlockabisip.LockUnlockAbisIpTest">		    						
+				<methods>									  			  				
+					<include name="unlockAbisIpWithRedirect">
+						<parameter name="testId" value="LTE00238816"/>
+						<parameter name="description" value="Unlock AbisIp and the BSC redirects the connection to one or more IP addresses" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp and the BSC redirects the connection to one or more IP addresses" />
+						<parameter name="NODEUC" value="Node459.A1" />
+					</include>																	  			  
+				    <include name="unlockAbisIpWithRedirectAndRevertToBrokerAfterStopCCN">
+						<parameter name="testId" value="LTE00238812"/>
+						<parameter name="description" value="Unlock AbisIp and Trx and BSC redirects the connection to another IP address with unlocked AbisIp and Trx, disconnect links and then revert to broker" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp and Trx and BSC redirects the connection to another IP address with unlocked AbisIp and Trx, disconnect links and then revert to broker" />
+						<parameter name="NODEUC" value="Node524.A2" />
+						<parameter name="NODEUC" value="Node459.A1" />
+					</include>													
+  				    <include name="unlockAbisIpWithRedirectAndRevertToBrokerAfterLinkBreak">
+						<parameter name="testId" value="LTE00238756"/>
+						<parameter name="description" value="Unlock AbisIp and Trx and BSC redirects the connection to another IP address with unlocked AbisIp and Trx, break the links and then revert to broker" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp and Trx and BSC redirects the connection to another IP address with unlocked AbisIp and Trx, break the links and then revert to broker" />
+						<parameter name="NODEUC" value="Node524.N" />
+						<parameter name="NODEUC" value="Node459.A1" />																							
+				   </include>				   				   										 									  			  
+				    <include name="redirectOnTheFlyWithUnlockedAbisIp">
+						<parameter name="testId" value="LTE00238814"/>
+						<parameter name="description" value="BSC re-directs the connection to another IP address with unlocked AbisIp" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="BSC re-directs the connection to another IP address with unlocked AbisIp" />
+						<parameter name="NODEUC" value="Node523.N" />
+					</include>													  			  		
+				    <include name="redirectOnTheFlyWithUnlockedAbisIpAndTrx">
+						<parameter name="testId" value="LTE00238815"/>
+						<parameter name="description" value="BSC re-directs the connection to another IP address with unlocked AbisIp and Trx" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="BSC re-directs the connection to another IP address with unlocked AbisIp and Trx" />
+						<parameter name="NODEUC" value="Node523.N" />
+					</include>													  			  
+   				    <include name="redirectOnTheFlyFailureWithUnlockedAbisIpAndTrx">
+						<parameter name="testId" value="LTE00238813"/>
+						<parameter name="description" value="BSC re-directs the connection to another IP address with unlocked AbisIp and Trx, revert to broker" />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="BSC re-directs the connection to another IP address with unlocked AbisIp and Trx, revert to broker" />
+						<parameter name="NODEUC" value="Node523.N" />
+					</include>
+				</methods>
+			</class>			
+		</classes>			
+	</test>	
+  					
+	<test name="LockUnlockAbisIpTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.lockunlockabisip.LockUnlockAbisIpTest">
+				<methods>									  			  					
+					<include name="unlockLockUnlockAbisIp">
+						<parameter name="testId" value="LTE00207347"/>
+						<parameter name="description" value="Unlock, lock, unlock AbisIp" />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock, lock, unlock AbisIp" />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />	 							
+					</include>
+                    <include name="unlockAbisIpNoBsc" >
+						<parameter name="testId" value="LTE00160606"/>
+						<parameter name="description" value="Unlock AbisIp without a BSC" />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp without a BSC" />
+						<parameter name="NODEUC" value="NodeUC459.A2" />	 							
+                    </include>
+					<include name="unlockLockAbisIpNotConnected" >
+						<parameter name="testId" value="LTE00207347"/>
+						<parameter name="description" value="Unlock AbisIp without connection to BSC - lock AbisIp" />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp without connection to BSC - lock AbisIp" />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />	 	
+					</include>
+					<include name="unlockLockAbisIpConnected" >
+						<parameter name="testId" value="LTE00207347"/>
+						<parameter name="description" value="Unlock AbisIp when connected - lock AbisIp" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp when connected - lock AbisIp" />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />	 	
+					</include>
+					<include name="unlockLockAbisIpLinksEstablished" >
+						<parameter name="testId" value="LTE00207347"/>
+						<parameter name="description" value="Unlock AbisIp with links - lock AbisIp" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock AbisIp with links - lock AbisIp" />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />	 	
+					</include>
+					<include name="unlockLockAbisIp" >
+						<parameter name="testId" value="LTE00207347"/>
+						<parameter name="description" value="First iteration unlock-lock AbisIp second iteration lock AbisIp with locked TRX" />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="First iteration unlock-lock AbisIp second iteration lock AbisIp with locked TRX" />
+						<parameter name="NODEUC" value="Node461.N" />
+						<parameter name="NODEUC" value="Node461.A1" />	 	
+					</include>
+					<include name="createUnlockAbisIpInOneTxLockDeleteAbisIpInOnTx" >
+                        <parameter name="testId" value="LTE00207347"/>
+                        <parameter name="description" value="Create and unlock AbisIp in the same Tx, lock and delete AbisIp in the same Tx " />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create and unlock AbisIp in the same Tx, lock and delete AbisIp in the same Tx" />
+						<parameter name="NODEUC" value="NodeUC457.N" />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC458.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />	 	
+                    </include>
+                    <include name="lockUnlockAbisIpWithUnlockedTrx" >
+                        <parameter name="testId" value="LTE00207347"/>
+                        <parameter name="description" value="Lock and unlock AbisIp when there is an unlocked Trx, and all links are established." />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Lock and unlock AbisIp when there is an unlocked Trx, and all links are established." />
+						<parameter name="NODEUC" value="NodeUC459.N" />
+						<parameter name="NODEUC" value="NodeUC461.N" />
+						<parameter name="NODEUC" value="NodeUC478.N" />
+						<parameter name="NODEUC" value="NodeUC646.A1" />
+						<parameter name="NODEUC" value="NodeUC426.A4" />	 	
+                    </include>  
+                    <include name="unlockAbisLockAbisWithTrxLockedGt60s">
+                        <parameter name="testId" value="LTE00202392"/>
+						<parameter name="description" value="NodeUC461.N: Lock AbisIp, NodeUC461.A1 Lock AbisIp with locked TRX MOs great than 60 seconds." />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="NodeUC461.N: Lock AbisIp, NodeUC461.A1 Lock AbisIp with locked TRX MOs great than 60 seconds." />
+						<parameter name="NODEUC" value="NodeUC461.N" />
+						<parameter name="NODEUC" value="NodeUC461.A1" />	 							
+                    </include> 
+                    <include name="unlockAbisLockAbisWithTrxLockedLt60s">
+                        <parameter name="testId" value="LTE00202392"/>
+						<parameter name="description" value="NodeUC461.N: Lock AbisIp, NodeUC461.A1 Lock AbisIp with locked TRX MOs less than 60 seconds." />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="NodeUC461.N: Lock AbisIp, NodeUC461.A1 Lock AbisIp with locked TRX MOs less than 60 seconds." />
+						<parameter name="NODEUC" value="NodeUC461.N" />
+						<parameter name="NODEUC" value="NodeUC461.A1" />						
+                    </include>                                                        
+				</methods>
+			</class>
+		</classes>
+	</test>  		
+</suite>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <artifactId>test-grat-with-dependencies</artifactId>
+    <!--version>0.0.1-SNAPSHOT</version-->
+    <version>${test.grat.version}</version>
+    <packaging>jar</packaging>
+
+    <name>test-grat</name>
+    <url>http://maven.apache.org</url>
+
+    <parent>
+        <groupId>com.ericsson.msran.test</groupId>
+        <artifactId>mje-test-parent</artifactId>
+        <version>0.0.11</version>
+    </parent>
+
+
+    <distributionManagement>
+        <site>
+            <id>common_jcat_site</id>
+            <name>Common JCAT Site</name>
+            <url>${site.scp}/${project.artifactId}/${project.version}</url>
+        </site>
+    </distributionManagement>
+    <scm>
+        <url>${scm.http}${scm.repository}.git</url>
+        <connection>${scm.ssh}/${scm.repository}</connection>
+        <developerConnection>${scm.ssh}/${scm.repository}</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <properties>
+    <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.checkstyle.generateXml>true</sonar.checkstyle.generateXml>
+    <sonar.pmd.generateXml>true</sonar.pmd.generateXml> >
+        <test.grat.version>0.0.1-SNAPSHOT</test.grat.version-->
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.msran.test</groupId>
+            <artifactId>test-grat</artifactId>
+            <version>${test.grat.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <createSourcesJar>true</createSourcesJar>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                                <exclude>fixtures.properties</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+
+                    <shadedClassifierName>all</shadedClassifierName>
+                  <!--   <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>org.testng.TestNG</mainClass>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring.handlers</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring.schemas</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/services/se.ericsson.jcat.fw.event.JcatEventSubscriber</resource>
+                        </transformer> 
+                    </transformers>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+  

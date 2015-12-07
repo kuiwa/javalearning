@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+<!--  <bean id="BJET12ABTS01" class="StpResource">
+        <property name="site" value="tass-data"/>
+        <property name="g2RbsList" ref="BJET12ABTS01_NODE" />
+        <property name="mssimList" ref="BJET.01" />
+    </bean>
+      -->
+
+	<bean id="ki_rbs1231-gwl1" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="mssimList" ref="mssim.37" />
+		<property name="g2RbsList" ref="KI_RBS1231-GWL1" />
+	</bean>
+	<bean id="ki_rbs1231-s2" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="KI_RBS1231-S2" />
+        <property name="mssimList" ref="mssim.26" />
+	</bean>
+	<bean id="ki_rbs1231-s3" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="KI_RBS1231-S3" />
+	</bean>
+	<bean id="ki_rbs1231-gwl4" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="KI_RBS1231-GWL4" />
+	</bean>
+	<bean id="KI_RBS1231-GWL5" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="ki_rbs1231-gwl5" />
+	</bean>
+	<bean id="KI_RBS719-GWL7" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs719-gwl7" />
+	</bean>
+    <bean id="KI_RBS719-GWL8" class="StpResource">
+        <property name="site" value="seki"/>
+        <property name="g2RbsList" ref="rbs719-gwl8" />
+    </bean>
+	<bean id="KI_RBS1274-GWL3" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs1274-GWL3" />
+		<property name="mssimList" ref="mssim.25" />
+	</bean>
+	<bean id="KI_RBS1285-GWL2" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs1285-gwl2" />
+        <property name="mssimList" ref="mssim.38" />
+	</bean>
+	<bean id="KI_RBS1285-GWL4" class="StpResource">
+		<property name="site" value="seki"/>
+		<!--property name="g2RbsList" ref="rbs1285-gwl4" /-->
+		<property name="mssimList" ref="mssim.25" />
+	</bean>
+	<bean id="ki_rbs1157-gwl2" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs1157-gwl2" />
+	</bean>
+	<bean id="ki_rbs1157-gwl5" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs1157-gwl5" />
+	</bean>
+
+	<bean id="KI_RBS1231-GWL1" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="externalFileServer" ref="sftp-RBS1231-GWL1" />
+	</bean>	
+	
+	<bean id="sftp-RBS1231-GWL1" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/RBS1231-GWL1/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="KI_RBS1231-S2" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-RBS1231-S2" />
+	</bean>	
+	
+	<bean id="sftp-RBS1231-S2" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/RBS1231-S2/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="KI_RBS1231-S3" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-RBS1231-S3" />
+	</bean>	
+	
+	<bean id="sftp-RBS1231-S3" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/RBS1231-S3/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="KI_RBS1231-GWL4" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-RBS1231-GWL4" />
+	</bean>	
+	
+	<bean id="sftp-RBS1231-GWL4" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/RBS1231-GWL4/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="ki_rbs1231-gwl5" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="externalFileServer" ref="sftp-rbs1231-gwl5" />
+	</bean>	
+	
+	<bean id="sftp-rbs1231-gwl5" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1231-gwl5/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>
+	
+	<bean id="rbs719-gwl7" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs719-gwl7" />
+	</bean>	
+	
+    <bean id="sftp-rbs719-gwl7" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs719-gwl7/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>
+	
+	<bean id="rbs719-gwl8" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs719-gwl8" />
+	</bean>	
+	
+	<bean id="sftp-rbs719-gwl8" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs719-gwl8/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>
+
+	<bean id="rbs1274-GWL3" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1274-GWL3" />
+	</bean>	
+	
+	<bean id="sftp-rbs1274-GWL3" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1274-GWL3/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+	<bean id="rbs1285-gwl2" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1285-gwl2" />
+        <property name="upgradeServerResource" ref="upgrade_sftp_rbs1285-gwl2" />
+	</bean>	
+	
+	<bean id="sftp-rbs1285-gwl2" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1285-gwl2/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+    
+    <bean id="upgrade_sftp_rbs1285-gwl2" class="UpgradeServerResource">
+         <property name="host" value="10.68.108.50" />
+         <property name="path" value="/upgrade/rbs1285-gwl2/" />
+         <property name="username" value="rbsg2ci" />
+         <property name="password" value="swan6red" />
+    </bean>
+
+	<bean id="rbs1285-gwl4" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1285-gwl4" />
+	</bean>	
+	
+	<bean id="sftp-rbs1285-gwl4" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1285-gwl4/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+	<bean id="rbs1157-gwl2" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1157-gwl2" />
+	</bean>	
+	
+	<bean id="sftp-rbs1157-gwl2" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1157-gwl2/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+	<bean id="rbs1157-gwl5" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1157-gwl5" />
+	</bean>	
+	
+	<bean id="sftp-rbs1157-gwl5" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1157-gwl5/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+	<bean id="wrbs745" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="WRBS745" />
+        <property name="mssimList" ref="mssim.137.58.191.214" />
+	</bean>
+
+	<bean id="WRBS745" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-WRBS745" />
+	</bean>	
+	
+	<bean id="sftp-WRBS745" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/WRBS745/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="wrbs646" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="WRBS646" />
+        <property name="mssimList" ref="mssim.137.58.191.214" />
+	</bean>
+
+	<bean id="WRBS646" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-WRBS646" />
+	</bean>	
+	
+	<bean id="sftp-WRBS646" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/WRBS646/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>		
+	
+	<bean id="wrbs651" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="WRBS651" />
+        <property name="mssimList" ref="mssim.137.58.191.214" />
+	</bean>
+
+	<bean id="WRBS651" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-WRBS651" />
+	</bean>	
+	
+	<bean id="sftp-WRBS651" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/WRBS651/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+	<bean id="wrbs746" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="WRBS746" />
+        <property name="mssimList" ref="mssim.137.58.191.214" />
+	</bean>
+
+	<bean id="WRBS746" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	    <property name="externalFileServer" ref="sftp-WRBS746" />
+	</bean>	
+	
+	<bean id="sftp-WRBS746" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/WRBS746/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+
+
+    <bean id="mssim.137.58.191.214" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="137.58.191.214" />
+        <property name="gsmbResource" ref="gsmb.137.58.191.214" />
+    </bean>
+
+    <bean id="gsmb.137.58.191.214" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+ 
+	<!-- Following STP's belong to G2CI and are not meant to be used by GRAT. -->
+	<!-- Only for faultfinding the G2CI machine after communication with them,-->
+	<!--  and after they have been removed from pool for automatic test. -->
+    <bean id="KI_RBS1192-GWL1" class="StpResource">
+        <property name="site" value="seki"/>
+        <property name="g2RbsList" ref="rbs1192-gwl1" />
+    </bean>
+    <bean id="KI_RBS1138-GWL5" class="StpResource">
+        <property name="site" value="seki"/>
+        <property name="g2RbsList" ref="rbs1138-gwl5" />
+    </bean>
+    <bean id="KI_RBS556-GWL1" class="StpResource">
+        <property name="site" value="seki"/>
+        <property name="g2RbsList" ref="rbs556-gwl1" />
+    </bean>
+	<bean id="KI_RBS1192-GWL2" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs1192-gwl2" />
+	</bean>
+	<bean id="KI_RBS1192-GWL3" class="StpResource">
+		<property name="site" value="seki"/>
+        <property name="mssimList" ref="mssim.25" />
+		<property name="g2RbsList" ref="rbs1192-gwl3" />
+	</bean>
+	<bean id="KI_RBS1192-GWL4" class="StpResource">
+		<property name="site" value="seki"/>
+        <property name="mssimList" ref="mssim.25" />
+		<property name="g2RbsList" ref="rbs1192-gwl4" />
+	</bean>
+	
+    <bean id="rbs556-gwl1" class="G2RbsResource">
+        <property name="Username" value="expert"/>
+        <property name="Password" value="expert"/>
+        <property name="netconfPort" value="830"/>
+        <property name="netconfUsername" value="expert"/>
+        <property name="netconfPassword" value="expert"/>
+        <property name="coliPort" value="4192"/>
+        <property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+        <property name="linuxPort" value="22"/>
+        <property name="linuxUsername" value="root"/>
+        <property name="linuxPassword" value="root"/>
+        <property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+    </bean> 
+    
+    <bean id="rbs1138-gwl5" class="G2RbsResource">
+        <property name="Username" value="expert"/>
+        <property name="Password" value="expert"/>
+        <property name="netconfPort" value="830"/>
+        <property name="netconfUsername" value="expert"/>
+        <property name="netconfPassword" value="expert"/>
+        <property name="coliPort" value="4192"/>
+        <property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+        <property name="linuxPort" value="22"/>
+        <property name="linuxUsername" value="root"/>
+        <property name="linuxPassword" value="root"/>
+        <property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+    </bean> 
+    
+    <bean id="rbs1192-gwl1" class="G2RbsResource">
+        <property name="Username" value="expert"/>
+        <property name="Password" value="expert"/>
+        <property name="netconfPort" value="830"/>
+        <property name="netconfUsername" value="expert"/>
+        <property name="netconfPassword" value="expert"/>
+        <property name="coliPort" value="4192"/>
+        <property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+        <property name="linuxPort" value="22"/>
+        <property name="linuxUsername" value="root"/>
+        <property name="linuxPassword" value="root"/>
+        <property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+        <property name="externalFileServer" ref="sftp-rbs1192-gwl1" />
+    </bean> 
+    
+	<bean id="sftp-rbs1192-gwl1" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1192-gwl1/" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+	
+	<bean id="rbs1192-gwl2" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="830"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1192-gwl2" />
+	</bean>	
+	
+	<bean id="sftp-rbs1192-gwl2" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1192-gwl2/" />
+        <property name="username" value="rbsg2ci" />
+	</bean>	
+
+	<bean id="rbs1192-gwl3" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	    <property name="externalFileServer" ref="sftp-rbs1192-gwl3" />
+	</bean>	
+	
+	<bean id="sftp-rbs1192-gwl3" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1192-gwl3/" />
+        <property name="username" value="rbsg2ci" />
+	</bean>	
+
+	<bean id="rbs1192-gwl4" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="sftp-rbs1192-gwl4" />
+	</bean>	
+	
+	<bean id="sftp-rbs1192-gwl4" class="FtpServerResource">
+        <property name="host" value="10.68.108.50" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/rbs1192-gwl4/" />
+        <property name="username" value="rbsg2ci" />
+	</bean>	
+
+	<bean id="rbs579-w5" class="StpResource">
+		<property name="site" value="seki"/>
+		<property name="g2RbsList" ref="rbs579-w5_node" />
+	</bean>
+	<bean id="rbs579-w5_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="comCliPort" value="2023"/>
+		<property name="comCliUsername" value="expert"/>
+		<property name="comCliPassword" value="expert"/>
+		<property name="comCliRegexPrompt" value=".*>"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliUsername" value="expert"/>
+		<property name="coliPassword" value="expert"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>	
+
+    <bean id="gsmb.25" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+ 
+    <bean id="mssim.25" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="10.68.107.25" />
+        <property name="gsmbResource" ref="gsmb.25" />
+    </bean>
+
+    <bean id="gsmb.26" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+ 
+    <bean id="mssim.26" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="10.68.107.26" />
+        <property name="gsmbResource" ref="gsmb.26" />
+    </bean>
+
+    <bean id="gsmb.37" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+ 
+    <bean id="mssim.37" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="10.68.107.37" />
+        <property name="gsmbResource" ref="gsmb.37" />
+    </bean>
+
+    <bean id="gsmb.38" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+ 
+    <bean id="mssim.38" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="10.68.107.38" />
+        <property name="gsmbResource" ref="gsmb.38" />
+    </bean>
+    <!-- vick -->
+    <bean id="SELIITRBS09876_UESIM.01" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+        <property name="host" value="10.185.17.52" />
+        <property name="gsmbResource" ref="SELIITRBS09876_GSMB.01" />
+    </bean>
+    
+    <bean id="SELIITRBS09876_GSMB.01" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+        <property name="port" value="5307" />
+    </bean>
+
+	<!-- GIC -->
+
+	<!-- PoC mssim sharing, TED 1919 -->
+	<bean id="SELIITRBS02468" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30004" />
+		<property name="g2RbsList" ref="seliitrbs02468_node" />
+	</bean>
+	<bean id="seliitrbs02468_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>
+
+	<!-- PoC mssim sharing, TED 1919 -->
+	<bean id="SELIITRBS02469" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30004" />
+		<property name="g2RbsList" ref="seliitrbs02469_node" />
+	</bean>
+	<bean id="seliitrbs02469_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>
+
+	<!-- SV, TED 1334/2308 -->
+	<bean id="SELIITRBS02492" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30002" />
+		<property name="g2RbsList" ref="seliitrbs02492_node" />
+	</bean>
+	<bean id="seliitrbs02492_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+        <property name="upgradeServerResource" ref="upgrade_sftp_seliitrbs02492_node" />
+        <property name="externalFileServer" ref="AVLI_sftp_seliitrbs02492_node" />
+	</bean>
+    
+    <bean id="upgrade_sftp_seliitrbs02492_node" class="UpgradeServerResource">
+         <property name="host" value="150.132.24.14" />
+         <property name="path" value="/upgrade/seliitrbs02492_node/" />
+         <property name="username" value="rbsg2ci" />
+         <property name="password" value="swan6red" />
+    </bean>
+    
+    <bean id="AVLI_sftp_seliitrbs02492_node" class="FtpServerResource">
+        <property name="host" value="150.132.24.14" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/seliitrbs02492)" />
+        <property name="username" value="rbsg2ci" />
+    </bean>
+    
+
+	<!-- CI BDC/NBV, TED 1307 -->
+	<bean id="SELIITRBS02497" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30004" />
+		<property name="g2RbsList" ref="seliitrbs02497_node" />
+	</bean>
+	<bean id="seliitrbs02497_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>
+
+	<!-- GRAT, TED 1427/1598 -->
+	<bean id="SELIITRBS04031" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim10002" />
+		<property name="g2RbsList" ref="seliitrbs04031_node" />
+	</bean>
+	<bean id="seliitrbs04031_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>
+
+	<!-- CI SV, TED 1306 -->
+	<bean id="SELIITRBS04043" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30003" />
+		<property name="g2RbsList" ref="seliitrbs04043_node" />
+	</bean>
+	<bean id="seliitrbs04043_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+		<property name="externalFileServer" ref="AVLI_sftp_seliitrbs04043_node" />
+	</bean>
+	
+	<bean id="AVLI_sftp_seliitrbs04043_node" class="FtpServerResource">
+        <property name="host" value="150.132.24.14" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/seliitrbs04043" />
+        <property name="username" value="rbsg2ci" />
+    </bean>
+
+<!-- CI SV, TED 1174/1276 -->
+	<bean id="SELIITRBS04032" class="StpResource">
+		<property name="site" value="seli"/>
+		<property name="mssimList" ref="seliiamssim30005" />
+		<property name="g2RbsList" ref="seliitrbs04032_node" />
+	</bean>
+	<bean id="seliitrbs04032_node" class="G2RbsResource">
+		<property name="Username" value="expert"/>
+		<property name="Password" value="expert"/>
+		<property name="netconfPort" value="2022"/>
+		<property name="netconfUsername" value="expert"/>
+		<property name="netconfPassword" value="expert"/>
+		<property name="coliPort" value="4192"/>
+		<property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+		<property name="linuxPort" value="22"/>
+		<property name="linuxUsername" value="root"/>
+		<property name="linuxPassword" value="root"/>
+		<property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+	</bean>
+    
+<!-- vick -->
+<bean id="SELIITRBS09876" class="StpResource">
+        <property name="site" value="seli"/>
+        <property name="mssimList" ref="SELIITRBS09876_UESIM.01" />
+        <property name="g2RbsList" ref="seliitrbs09876_node" />
+    </bean>
+    <bean id="seliitrbs09876_node" class="G2RbsResource">
+        <property name="Username" value="expert"/>
+        <property name="Password" value="expert"/>
+        <property name="netconfPort" value="2022"/>
+        <property name="netconfUsername" value="expert"/>
+        <property name="netconfPassword" value="expert"/>
+        <property name="coliPort" value="4192"/>
+        <property name="coliRegexPrompt" value="coli(.\[\/\]-)?>"/>
+        <property name="linuxPort" value="22"/>
+        <property name="linuxUsername" value="root"/>
+        <property name="linuxPassword" value="root"/>
+        <property name="linuxRegexPrompt" value="\S+@\S+:\S+#"/>
+    </bean>
+    <bean id="upgrade_sftp_seliitrbs09876_node" class="UpgradeServerResource">
+         <property name="host" value="150.132.24.14" />
+         <property name="path" value="/upgrade/seliitrbs09876_node/" />
+         <property name="username" value="rbsg2ci" />
+         <property name="password" value="swan6red" />
+    </bean>
+    
+    <bean id="AVLI_sftp_seliitrbs09876_node" class="FtpServerResource">
+        <property name="host" value="150.132.24.14" />
+        <property name="password" value="swan6red" />
+        <property name="path" value="/AVLIlog/seliitrbs09876_node2)" />
+        <property name="username" value="rbsg2ci" />
+    </bean>	
+    
+	<bean id="seliiamssim10002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+		<property name="host" value="10.198.11.25" />
+		<property name="gsmbResource" ref="seliiamssim10002.gsmb" />
+	</bean>
+	<bean id="seliiamssim10002.gsmb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+		<property name="port" value="5307" />
+	</bean>
+
+	<bean id="seliiamssim30002" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+		<property name="host" value="10.198.11.8" />
+		<property name="gsmbResource" ref="seliiamssim30002.gsmb" />
+	</bean>
+	<bean id="seliiamssim30002.gsmb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+		<property name="port" value="5307" />
+	</bean>
+
+	<bean id="seliiamssim30003" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+		<property name="host" value="10.198.11.13" />
+		<property name="gsmbResource" ref="seliiamssim30003.gsmb" />
+	</bean>
+	<bean id="seliiamssim30003.gsmb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+		<property name="port" value="5307" />
+	</bean>
+
+	<bean id="seliiamssim30004" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+		<property name="host" value="10.198.11.15" />
+		<property name="gsmbResource" ref="seliiamssim30004.gsmb" />
+	</bean>
+	<bean id="seliiamssim30004.gsmb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+		<property name="port" value="5307" />
+	</bean>
+
+<bean id="seliiamssim30005" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.MssimResource">
+		<property name="host" value="10.198.11.17" />
+		<property name="gsmbResource" ref="seliiamssim30005.gsmb" />
+	</bean>
+	<bean id="seliiamssim30005.gsmb" class="com.ericsson.commonlibrary.resourcemanager.resourcedata.model.GsmbResource">
+		<property name="port" value="5307" />
+	</bean>
+
+    <bean id="abisco_ufte003" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte005" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte006" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte007" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte008" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte026" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte027" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte028" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+    <bean id="abisco_ufte029" class="AbiscoResource">
+       <property name="linuxUsername" value="gratci"/>
+       <property name="linuxPassword" value="RoadR-14"/>
+    </bean>
+
+</beans>

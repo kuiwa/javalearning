@@ -1,0 +1,31 @@
+
+Info
+	
+	<module> is to <info>
+ 
+Wiki
+ 
+	All msran-jcat-extension related information can be found at {{{${project.url}}Msran Jcat Extension Wiki}}
+
+Contact
+ 
+ 	{{{https://eforge.ericsson.se/sf/discussion/do/listTopics/projects.jcat_ran/discussion.dura_jcat}DURA JCAT Architecture forum}}
+	
+	{{{https://eforge.ericsson.se/sf/tracker/do/listArtifacts/projects.jcat_ran/tracker.dura_jcat_bug}DURA JCAT Bugs}}
+
+	{{{https://eforge.ericsson.se/sf/tracker/do/listArtifacts/projects.jcat_ran/tracker.dura_jcat_architecture}DURA JCAT Product Backlog}}
+ 
+ 	
+Usage with Maven
+	
+	To use ${project.name} with Maven add the following dependency in your pom.xml
+	  
+----------------------------------------------------------
+<dependency>
+	<groupId>${project.groupId}</groupId>
+	<artifactId>${project.artifactId}</artifactId>
+	<version>${project.version}</version>
+	<type>jar</type>
+	<scope>compile</scope>
+</dependency>
+----------------------------------------------------------

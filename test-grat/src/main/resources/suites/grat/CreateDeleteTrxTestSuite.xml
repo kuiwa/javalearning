@@ -1,0 +1,65 @@
+<suite name="CreateDeleteTrxTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="CreateDeleteTrxTest ManagedElement=1,BtsFunction=1,GsmSector=1">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.createdeletetrx.CreateDeleteTrxTest">
+				<methods>
+					<include name="createDeleteTrx" >
+                    	<parameter name="testId" value="LTE00207312"/>
+						<parameter name="description" value="Create TRX - Delete TRX"/>
+						<parameter name="noOfGsmSectors" value="2" />
+						<parameter name="noOfTrxsPerGsmSector" value="1" />
+               	    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create TRX - Delete TRX" />
+						<parameter name="NODEUC" value="NodeUC424.A1" />
+						<parameter name="NODEUC" value="NodeUC425.N" />	 					
+                    </include>
+                    <include name="deleteUnlockedTrxFails" >
+                    	<parameter name="testId" value="LTE00207312"/>
+                    	<parameter name="description" value="Delete Unlocked TRX" />
+                    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Delete Unlocked TRX" />
+						<parameter name="NODEUC" value="NodeUC425.E1" />	 
+                    </include>                    
+                   	<include name="createTrxFails" >
+                    	<parameter name="testId" value="LTE00207312"/>
+                    	<parameter name="description" value="Number of created TRX exceeds limit" />
+                    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Number of created TRX exceeds limit" />
+						<parameter name="NODEUC" value="NodeUC522.N" />	 
+                    </include>    
+                   	<include name="createDeleteTrxWithEstablishedScfOml" >
+                    	<parameter name="testId" value="LTE00207312"/>
+                    	<parameter name="description" value="Create and delete a Trx when SCF OML is established" />
+                    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create and delete a Trx when SCF OML is established" />
+						<parameter name="NODEUC" value="NodeUC424.N" />
+						<parameter name="NODEUC" value="NodeUC425.N" />	 
+                    </include>
+                    <include name="createTrxWithNonExistingSectorEqFuncRefFails" >
+                    	<parameter name="testId" value="LTE00221733"/>
+                    	<parameter name="description" value="Create a Trx that refers to a non existing SectorEquipmentFunction MO." />
+                    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create a Trx that refers to a non existing SectorEquipmentFunction MO." />
+						<parameter name="NODEUC" value="NodeUC424.E1" />	 
+	                </include>
+	                <include name="createTrxWithMismatchArfcnAndFrequency" >
+                    	<parameter name="testId" value="LTE00221751"/>
+                    	<parameter name="description" value="Create TRX with a mismatch between ARFCN and frequency band." />
+                    	<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create TRX with a mismatch between ARFCN and frequency band." />
+						<parameter name="NODEUC" value="NodeUC424.E2" />	 
+	                </include>                
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

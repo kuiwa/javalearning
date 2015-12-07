@@ -1,0 +1,30 @@
+<suite name="CreateDeleteMoTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="SoftwareCheckTests">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.softwareCheck.SoftwareCheckTest">
+				<methods>
+					<include name="toCheckSoftware"/>															 
+					<parameter name="testId" value="GRAT000001"/>
+					<parameter name="description" value="Getting Started With GRAT Software is up and Running"/>
+					<parameter name="softwarePackage" value="CXP9023458"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+  	<test name="CreateMoTest ManagedElement=1,BtsFunction=1,GsmSector=1">
+		<classes>
+ 	         <class name="com.ericsson.msran.test.grat.createdeletemo.CreateDeleteMoTest">
+				<methods>
+					<include name="test1">
+						 <parameter name="moLdn" value="ManagedElement=1,BtsFunction=1,GsmSector=1" /> 
+						 <parameter name="ManagedElement=1,BtsFunction=1,GsmSector=1.sectorEquipmentFunctionRef" 
+						 value="ManagedElement=1,SectorEquipmentFunction=1"/>	
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

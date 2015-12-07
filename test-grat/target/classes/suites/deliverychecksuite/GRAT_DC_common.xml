@@ -1,0 +1,56 @@
+<suite name="GRAT_DC_common" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+  	<test name="LockUnlockTrxTest ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=1">
+  		<meta name="suiteGenInput">
+  			<parameter name="deliverycheck" value="include"/>
+			<parameter name="status" value="legacy"/>
+  		</meta>
+		<classes>
+		
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxWithoutLinksTest">
+				<methods>
+					<include name="unlockLockTrxWithoutLinks" >
+						<parameter name="testId" value="NodeUC426.A4, NodeUC428.A2"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX without links" />
+					</include>
+				</methods>
+			</class>
+									
+			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxWithLockedAbisIpTest">
+				<methods>
+					<include name="unlockLockTrxWithLockedAbisIp" >
+						<parameter name="testId" value="NodeUC426.A2, NodeUC428.A2 and NodeUC524.A3"/>
+						<parameter name="description" value="Unlock and lock Trx MO with locked AbisIp" />
+					</include>
+				</methods>
+			</class>
+			
+			
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxEstablishedLinksTest">
+				<methods>
+					<include name="lockUnlockTrxWithLinks" >
+						<parameter name="testId" value="NodeUC426.N,NodeUC428.N"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX after establishing links" />
+					</include>
+					<include name="lockUnlockTrxWithLinks2" >
+						<parameter name="testId" value="NodeUC426.N, NodeUC428.A2"/>
+						<parameter name="description" value="Establish links, Unlock TRX, Release links, Lock TRX" />
+					</include> 
+				</methods>
+			</class>
+			
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxReleasedLinksTest">
+				<methods>
+					<include name="lockUnlockTrxWithReleasedLinks" >
+						<parameter name="testId" value="NodeUC426.A3,NodeUC428.A2"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX after establish-release links" />
+					</include>
+				</methods>
+			</class>
+			
+		</classes>
+	</test>  
+</suite>

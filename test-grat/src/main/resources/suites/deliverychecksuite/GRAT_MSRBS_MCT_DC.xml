@@ -1,0 +1,11 @@
+<suite name="GRAT Delivery Check(DC) MTC towards passive MSSIM" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+	<suite-files>
+		<suite-file path="../grat/FirstCallMsSimSuite.xml" />
+	</suite-files>
+
+</suite>

@@ -1,0 +1,21 @@
+<suite name="StopSynchTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Synch Test">
+		<classes>
+		 	<class name="com.ericsson.msran.test.grat.synch.StopSynchTest">
+				<methods>
+					<include name="stopSynchTest">
+						<parameter name="testId" value="NodeUC511.N" />
+						<parameter name="testDescription" value="Verify the GRAT Sequence: Stop Synchronization" />
+                        <parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="FAJ 122 081" />
+                        <parameter name="Test slogan" value="Verify the stop synchronization function" />
+                        <parameter name="NODEUC" value="NodeUC511.N" />						
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

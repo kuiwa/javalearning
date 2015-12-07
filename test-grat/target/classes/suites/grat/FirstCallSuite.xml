@@ -1,0 +1,17 @@
+<suite name="FirstCallSetupSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="First CallSetup">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.firstcall.FirstCallTest">
+				<methods>
+					<include name="firstCallTxRxTs">
+						<parameter name="testId" value="NodeUCXXX.N"/>
+						<parameter name="description" value="Configure up to sysInfo"/>
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,27 @@
+<!-- This is an example suite using JCAT MSRBS test scripts. Use the following 
+	WMArguments in the run configuration settings: -Dtestconfiguration=TASS test 
+	configuration name e.g RBSLN7 -Dnodename=TASS node name e.g RBSLN7-L2 or 
+	RBSLN7-W1 -Dels=se.ericsson.jcat.msrbs.neal.PingListener,se.ericsson.jcat.msrbs.neal.CmListener 
+	-Dlogdir=/proj/rbsiov_env/logs (common log area to store the log files) -Dnoscheduler=1 
+	(Optional: only needed if you need to bypass the booking scheduler) -Djcat.logging=<DEBUG,INFO,WARN,ERROR,FATAL> 
+	(Optional: Sets the logging level) To run with test statistics output DB 
+	-Dlogdb.configuration=src/test/resources/teststatistics_db.properties -Dlogwriters="se.ericsson.jcat.fw.ng.logging.writers.DbLogWriterRIPNG" -->
+
+<suite name="MOFWK Delivery Check(DC)" parallel="false"
+	rbsGeneration="gen2">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+	<!-- Experimenting with relative paths to suite files: -->	
+	<suite-files>
+		<suite-file path="MOFWK_DC_TeamPrivate.xml" />
+		<!-- Support moved from msr-test to MJE since 'RestartNodeTest' started to fail. /Torvald 2014-03-18.  		
+			 Opened again. /Torvald 2014-04-02.	
+		-->
+		<suite-file path="RBSNC_DC_common.xml" />
+		<suite-file path="GRAT_DC_common.xml" />
+	</suite-files>
+
+</suite>
+

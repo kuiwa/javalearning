@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SoftwareCheck" verbose="1" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	
+	<test name="SoftwareCheckTests">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.softwarecheck.SoftwareCheckTest">
+				<methods>
+					<include name="checkSoftware"/>
+					<parameter name="testId" value="GRAT000001"/>
+					<parameter name="description" value="Getting Started With GRAT Software is up and Running"/>
+					<parameter name="softwarePackage" value="CXP9023458"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

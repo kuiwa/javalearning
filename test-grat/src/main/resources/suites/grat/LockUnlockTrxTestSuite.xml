@@ -1,0 +1,157 @@
+<suite name="LockUnlockTrx" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="LockUnlockTrxTest ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=1">
+  		<meta name="suiteGenInput">
+  			<parameter name="deliverycheck" value="include"/>
+			<parameter name="status" value="legacy"/>
+  		</meta>
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.LockUnlockTrxTest">
+				<methods>   
+					<include name="lockUnlockTrx" >
+						<parameter name="testId" value="LTE00207354"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock TRX - Lock TRX" />
+                        <parameter name="NODEUC" value="NodeUC426.N" />
+                        <parameter name="NODEUC" value="NodeUC428.N" />
+					</include>							
+					<include name="lockAlreadyLockedTrx" >
+						<parameter name="testId" value="LTE00207354"/>
+						<parameter name="description" value="Lock TRX that is already locked"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Lock TRX that is already locked" />
+                        <parameter name="NODEUC" value="NodeUC428.A1" />
+					</include>
+					<include name="unlockAlreadyUnlockedTrx" >
+						<parameter name="testId" value="LTE00207354"/>
+						<parameter name="description" value="Unlock TRX that is already unlocked"/>					
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock TRX that is already unlocked" />
+                        <parameter name="NODEUC" value="NodeUC426.A1" />						
+					</include>
+					<include name="lockDeleteTrx" >
+						<parameter name="testId" value="LTE00207354"/>
+						<parameter name="description" value="Unlock TRX - Lock and Delete TRX same transaction" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Unlock TRX - Lock and Delete TRX same transaction" />
+                        <parameter name="NODEUC" value="NodeUC426.N" />
+                        <parameter name="NODEUC" value="NodeUC428.N" />												
+					</include>
+				</methods>
+			</class>			
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.CreateDeleteUnlockLockMoCombinationsTest">
+                <methods>
+                    <include name="createUnlockAllMoInOneTxLockDeleteAllMoInOneTx_1" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, AbisIp, and Trx in one transaction. Lock and delete Trx, AbisIp, and GsmSector in one transaction."/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, AbisIp, and Trx in one transaction. Lock and delete Trx, AbisIp, and GsmSector in one transaction." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>                                                         
+                    <include name="createUnlockAllMoInOneTxLockDeleteAllMoInOneTx_2" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock and delete AbisIp, Trx, and GsmSector in one transaction."/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock and delete AbisIp, Trx, and GsmSector in one transaction." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>                   
+                    <include name="createUnlockAllMoInOneTxLockDeleteAllMoInOneTx_3" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock AbisIp and Trx, and delete GsmSector in one transaction. AbisIp and Trx shall be deleted implicitly"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock AbisIp and Trx, and delete GsmSector in one transaction. AbisIp and Trx shall be deleted implicitly." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>                   
+                    <include name="createUnlockAllMoInOneTxLockDeleteAllMoInOneTx_4" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock Trx and AbisIp, and delete GsmSector in one transaction. AbisIp and Trx shall be deleted implicitly"/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction. Lock Trx and AbisIp, and delete GsmSector in one transaction. AbisIp and Trx shall be deleted implicitly." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>     
+                    <include name="createUnlockAllMoInOneTxPerMoLockDeleteAllMoInOneTxPerMo_1" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction per MO. Lock and delete AbisIp, Trx, and GsmSector in one transaction per MO."/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction per MO. Lock and delete AbisIp, Trx, and GsmSector in one transaction per MO." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>
+                    <include name="createUnlockAllMoInOneTxPerMoLockDeleteAllMoInOneTxPerMo_2" >
+                        <parameter name="testId" value="LTE00207349"/>
+                        <parameter name="description" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction per MO. Lock and delete Trx, AbisIp, and GsmSector in one transaction per MO."/>
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Create and unlock GsmSector, Trx, and AbisIp in one transaction per MO. Lock and delete Trx, AbisIp, and GsmSector in one transaction per MO." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />                        
+                    </include>
+                </methods>
+            </class>
+		</classes>
+	</test>
+</suite>

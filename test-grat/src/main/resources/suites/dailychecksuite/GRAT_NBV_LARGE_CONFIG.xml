@@ -1,0 +1,10 @@
+<suite name="GRAT node baseline verification for large configurations" rbsGeneration="gen2">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+	
+	<suite-files>
+        <suite-file path="../grat/CompleteStartupTestSuite.xml" />
+	</suite-files>
+</suite>

@@ -1,0 +1,17 @@
+<suite name="GratCreateAndUnlockTrx" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="CreateAndUnlockTrx">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.trxtestnorestore.CreateAndUnlockTrx">
+				<methods>
+					<include name="createAndUnlockTrx" >
+						<parameter name="testId" value="NodeUC424.N,NodeUC426.N"/>
+						<parameter name="description" value="Create and unlock TRX" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

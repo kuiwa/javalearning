@@ -1,0 +1,21 @@
+<suite name="RestartRecoverSuite" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Test that the GRAT recovers after different types of restart">
+		<classes>
+            <class name="com.ericsson.msran.test.grat.restartrecover.RecoverGsmMo">
+                <methods>   
+                    <include name="recoverAllGratMosReestablishOmlAndRsl" >
+                        <parameter name="testId" value="LTE00207375"></parameter>
+                        <parameter name="description" value="Create and unlock MOs and established links. Reboot node and see that the GRAT comes up properly after the restart." />
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create and unlock MOs and established links. Reboot node and see that the GRAT comes up properly after the restart." />
+						<parameter name="NODEUC" value="NodeUC522.A1" />                        
+                    </include>
+                </methods>
+            </class>
+		</classes>
+	</test> 
+</suite>

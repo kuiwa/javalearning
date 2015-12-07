@@ -1,0 +1,239 @@
+<suite name="CompleteStartup" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+ 	<test name="Complete Startup, 1 GsmSector with 4 Trxs">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 1 GsmSector with 4 Trxs." />
+                        <parameter name="numOfTGs" value="1" />
+						<parameter name="numOfTrxesPerTG" value="4" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 1 GsmSector with 4 Trxs." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="Complete Startup, 4 GsmSectors with 1 Trx in each GsmSector">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 4 GsmSectors with 1 Trx in each GsmSector." />
+                        <parameter name="numOfTGs" value="4" />
+						<parameter name="numOfTrxesPerTG" value="1" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 4 GsmSectors with 1 Trx in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Complete Startup, 2 GsmSectors with 2 Trxs in each GsmSector">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 2 GsmSectors with 2 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="2" />
+						<parameter name="numOfTrxesPerTG" value="2" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 2 GsmSectors with 2 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- The tests below with 12 TRX:es can only be run on test channels that has extra radios. -->  
+<!-- 	
+  	<test name="Complete Startup, 1 GsmSector with 12 Trxs.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 1 GsmSector with 12 Trxs." />
+                        <parameter name="numOfTGs" value="1" />
+						<parameter name="numOfTrxesPerTG" value="12" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 1 GsmSector with 12 Trxs." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Complete Startup, 6 GsmSectors with 2 Trxs in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 6 GsmSectors with 2 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="6" />
+						<parameter name="numOfTrxesPerTG" value="2" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 6 GsmSectors with 2 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+-->
+	<!-- The tests below with 24 TRX:es can only be run on test channels that has at least three RUS02 or greater. -->
+	<!-- The test case may need to be updated to allocate 8 TRX:es per RUS instead of 4 -->
+<!-- 	
+	<test name="Complete Startup, 3 GsmSectors with 8 Trxs in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 3 GsmSectors with 8 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="3" />
+						<parameter name="numOfTrxesPerTG" value="8" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 3 GsmSectors with 8 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Complete Startup, 4 GsmSectors with 6 Trxs in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 4 GsmSectors with 6 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="4" />
+						<parameter name="numOfTrxesPerTG" value="6" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 4 GsmSectors with 6 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Complete Startup, 2 GsmSectors with 12 Trxs in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 2 GsmSectors with 12 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="2" />
+						<parameter name="numOfTrxesPerTG" value="12" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 2 GsmSectors with 12 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="Complete Startup, 6 GsmSectors with 4 Trxs in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 6 GsmSectors with 4 Trxs in each GsmSector." />
+                        <parameter name="numOfTGs" value="6" />
+						<parameter name="numOfTrxesPerTG" value="4" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 6 GsmSectors with 4 Trxs in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+-->
+	<!-- This test case with 6 TRX:es requires one RUS02 -->
+    <!-- The main purpose of this test case is to to test a fully loaded GTE, but where each TRX has its own GsmSector, 
+         this will create the maximum number of processes and signaling from a transport point of view  -->
+<!--   
+	<test name="Complete Startup, 6 GsmSectors with 1 Trx in each GsmSector.">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+				<methods>
+   					<include name="completeStartup" >
+						<parameter name="testId" value="GRAT000025" />
+						<parameter name="description" value="Complete startup of all MOs, 6 GsmSectors with 1 Trx in each GsmSector." />
+                        <parameter name="numOfTGs" value="6" />
+						<parameter name="numOfTrxesPerTG" value="1" />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Complete startup of 6 GsmSectors with 1 Trx in each GsmSector." />
+                        <parameter name="NODEUC" value="UC513.N" />
+						<parameter name="NODEUC" value="UC602.N" />
+						<parameter name="NODEUC" value="UC607.N" />
+						<parameter name="NODEUC" value="UC627.N" />
+                        <parameter name="NODEUC" value="UC646.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+-->
+</suite>

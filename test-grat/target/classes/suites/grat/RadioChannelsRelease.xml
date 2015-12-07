@@ -1,0 +1,21 @@
+<suite name="RadioChannelsRelease" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Radio Channel Release Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.radiochannelsrelease.RadioChannelsReleaseTest">
+				<methods>
+					<include name="radioChannelsRelease">
+						<parameter name="testId" value="NodeUC628.N"/>
+						<parameter name="description" value="Verifiy Radio Channel Release."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Verifiy Radio Channel Release." />
+						<parameter name="NODEUC" value="NodeUC628.N" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

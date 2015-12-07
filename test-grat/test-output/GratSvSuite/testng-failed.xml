@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [GratSvSuite]">
+  <listeners>
+    <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+  </listeners>
+  <test name="Grat SV MaximunLoad Traffic suite(failed)">
+    <classes>
+      <class name="com.ericsson.msran.test.grat.configsv.MaximumLoadTrafficTestProductSV">
+        <methods>
+          <include name="maximumLoadTrafficTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ericsson.msran.test.grat.configsv.MaximumLoadTrafficTestProductSV -->
+    </classes>
+  </test> <!-- Grat SV MaximunLoad Traffic suite(failed) -->
+</suite> <!-- Failed suite [GratSvSuite] -->

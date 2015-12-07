@@ -1,0 +1,20 @@
+<suite name="ChannelActivationSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="MSPowerChannelActivation">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.mspowercontrol.MSPowerChannelActivation">
+				<methods>
+					<include name="msPower">
+						<parameter name="testId" value=""/>
+						<parameter name="description" value="Setup call MT with MS Power, measure and check MS power."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Setup call MT with MS Power, measure and check MS power." />
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

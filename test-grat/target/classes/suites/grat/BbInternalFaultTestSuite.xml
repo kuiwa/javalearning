@@ -1,0 +1,38 @@
+<suite name="BbInternalFaultTests" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="BbInternalFaultTest1">
+		<classes>          									
+			<class name="com.ericsson.msran.test.grat.bbInternalFault.BbInternalFaultTest">
+				<methods>
+					<include name="makeReoveryFromResetSoTrxc">
+						<parameter name="testId" value="LTE00231242"/>
+						<parameter name="description" value="Baseband internal fault is detected and reset SO TRXC" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Baseband internal fault is detected and reset SO TRXC" />
+                        <parameter name="NODEUC" value="NodeUC629.A2" />
+					</include>
+					<include name="makeReoveryFromEscalation">
+						<parameter name="testId" value="LTE00231254"/>
+						<parameter name="description" value="Baseband internal fault are detected twice within 5 minutes, rest AO RX and restart board are performed" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Baseband internal fault are detected twice within 5 minutes, rest AO RX and restart board are performed" />
+                        <parameter name="NODEUC" value="NodeUC629.A3" />
+                        <parameter name="NODEUC" value="NodeUC629.A4" />
+					</include>
+					<include name="makeReoveryFromResetBoard">
+						<parameter name="testId" value="LTE00231263"/>
+						<parameter name="description" value="Baseband internal fault is detected and restart board is performed" />
+                        <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Baseband internal fault is detected and restart board is performed" />
+                        <parameter name="NODEUC" value="NodeUC629.A5" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

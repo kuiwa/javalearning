@@ -1,0 +1,35 @@
+<suite name="GRAT System Verification suite" parallel="false" rbsGeneration="gen2" boardType="DUS">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+        <listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener" />
+    </listeners>
+    <test name="Grat SV MaximunLoad Traffic suite">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.configsv.MaximumLoadTrafficTestProductSV">
+                <methods>
+                    <include name="maximumLoadTrafficTest">
+                        <parameter name="testId" value="LTExyz"/>
+                        <parameter name="description" value="Maximum load test case"/>
+                        <parameter name="numOfTGs" value="1" />
+                        <parameter name="numOfTrxesPerTG" value="12" />
+                        <parameter name="isRunManually" value="true"/> <!-- Run "manually", start/stop LTS is done via pop-up window. -->
+                        <parameter name="callSetupRate" value="12000"/> <!-- Call Setup Rate (CSR) 12000/1000 = 12 calls/s for TG1 ; If tg number > 1, use "," to split callSetupRate for each TG, eg: 12000,11000,10000.-->
+                        <parameter name="smsSetupRate" value="1100"/> <!-- SMS Setup Rate (SPR) 1100/1000 = 1.1 sms/s for TG1; If tg number > 1, use "," to split smsSetupRate for each TG, eg: 1100,1000,1000.-->
+                        <parameter name="callDuration" value="8"/> <!-- Call Duration is time of call in seconds; If tg number > 1, use "," to split callDuration for each TG, eg: 8,9,8  -->
+                        <parameter name="percentageFR" value="10"/> <!-- 10% FR calls for TG1 ; If tg number > 1, use "," to split percentageFR for each TG, eg: 10,10,10-->
+                        <parameter name="percentageEFR" value="90"/> <!-- 90% FR calls ; If tg number > 1, use "," to split percentageFR for each TG, eg: 90,90,90 -->
+                        <parameter name="loadTestDuration" value="14400"/> <!-- Duration of stability load test in seconds. Not used if manual. -->
+                        <parameter name="ccchLoadPagingRate" value="26400"/><!-- 26 paging per sec for TG1 ; If tg number > 1, use "," to split ccchLoadPagingRate for each TG, eg: 26,25,26 -->
+                        <parameter name="ccchLoadLRSAssRate" value="3000"/><!-- 3 Immediate assignment per sec for TG1 ; If tg number > 1, use "," to split ccchLoadLRSAssRate for each TG, eg: 3,3,2-->
+                        <parameter name="ccchLoadLRSAssRejRate" value="3000"/><!-- 3 Immediate assignment reject per sec for TG1 ; If tg number > 1, use "," to split ccchLoadLRSAssRejRate for each TG, eg: 3,3,3-->
+                        <parameter name="ccchLoadPSPagingRatio" value="50"/><!-- 50% Paging Ratio for TG1 ; If tg number > 1, use "," to split ccchLoadPSPagingRatio for each TG, eg: 50,50,50-->
+                        <parameter name="resetMeasureFile" value="/proj/gratci/system_verification/scripts/test1_reset_measurements.mos"/> <!-- change reset measurement mos path -->
+                        <parameter name="measurementFile" value="/proj/gratci/system_verification/scripts/test1_grat_measurements.mos"/> <!-- change measurement load mos path -->
+                        <!-- <parameter name="hoppingIndicator" value="BASEBAND"/>--> <!-- For feature WP4956, default value is Off -->
+                        <parameter name="isSWdownloadEnable" value="false"/>
+                    </include>
+                </methods>
+           </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,21 @@
+<suite name="TerrestrialLinkSupervision" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Terrestrial Link Supervision Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.terrestriallinksupervision.TerrestrialLinkSupervisionTest">
+				<methods>
+					<include name="terrestrialLinkSupervision">
+						<parameter name="testId" value="NodeUC629.N"/>
+						<parameter name="description" value="Detect and Report Abis Terrestrial Link Fault."/>
+						<parameter name="QA" value="ROBUSTNESS" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Detect and Report Abis Terrestrial Link Fault." />
+						<parameter name="NODEUC" value="NodeUC629.N" />									
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

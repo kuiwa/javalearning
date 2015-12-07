@@ -1,0 +1,21 @@
+<suite name="PacketSwitchedData" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Packet Switched Data Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.psdata.PacketSwitchedData">
+				<methods>
+					<include name="packetSwitchedDataTest">
+						<parameter name="testId" value="LTE00240650"/>
+						<parameter name="description" value="Verify GPRS and EGPRS."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Verify GPRS and EGPR." />
+						<parameter name="NODEUC" value="N/A" />									
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

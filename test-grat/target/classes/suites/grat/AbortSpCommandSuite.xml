@@ -1,0 +1,22 @@
+<suite name="AbortSpCommandSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+        
+	<test name="Abort SP Command Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.abortspcommand.AbortSpCommandTest">
+				<methods>
+					<include name="abortSpCommandTest">
+						<parameter name="testId" value="NodeUC481.A2"/>
+						<parameter name="description" value="Abis downlink SP, completion after Abort SP Command"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis downlink SP, completion after Abort SP Command" />
+                        <parameter name="NODEUC" value="NodeUC481.A2" />		
+					</include>
+				</methods>                        
+			</class>
+		</classes>
+	</test>
+</suite>

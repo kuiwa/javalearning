@@ -1,0 +1,16 @@
+<suite name="DynamicFrameAlignmentTestSuite2" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Dynamic Frame Alignment Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.framealignment.DynamicFrameAlignment2">
+				<methods>
+					<include name="dynamicFrameAlignment" />
+                         <parameter name="testId" value="LTE00238872"/>
+					     <parameter name="description" value="Verify dynamic alignment according to 3GPP 51.021"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

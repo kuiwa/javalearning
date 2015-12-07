@@ -1,0 +1,22 @@
+<suite name="BbCrashTests" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="BbCrashTest1">
+		<classes>          									
+			<class name="com.ericsson.msran.test.grat.bbcrash.BbCrashTest">
+				<methods>
+					<include name="makeBbCrash">
+						<parameter name="testId" value="GRAT000014"/> 
+						<parameter name="description" value="To Verify Crash of SNID512 Baseband and Dump Files"/>
+						<parameter name="dsp" value="3"/>
+						<parameter name="loadModule" value="Baseband 3 is down, fetching baseband dump"/>
+						<parameter name="numberOfOccurances" value="1"/>
+						<parameter name="reboot" value="false" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>
+

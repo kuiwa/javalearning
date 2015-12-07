@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="CallSetupandPayloadCheck" parallel="false"
+	rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="Set up call,  check payload to see the bit error rate ">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.firstcall.PayloadTest">
+				<methods>
+					<include name="firstCallMsSimAndPayloadTesting">
+						<parameter name="testId" value="LTE00238824" />
+						<parameter name="description"
+							value="Set up and disconnect a call towards passive answering MSSSIM" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

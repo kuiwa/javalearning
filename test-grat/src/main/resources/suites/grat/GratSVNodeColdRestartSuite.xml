@@ -1,0 +1,38 @@
+<suite name="GratSvSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+    </listeners>
+
+    <test name="Grat SV Node Cold Restart suite">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.configsv.NodeRestartTestProductSV">
+                <methods>
+                    <include name="nodeRestartTestForProduct">
+                        <parameter name="testId" value="LTExyz"/>
+                        <parameter name="description" value="Node Restart with traffic test case"/>
+                        <!--  <parameter name="noTrxsInGsmSector" value="12"/> --><!-- Total Trx number -->
+                        <!--  <parameter name="cellNumber" value="1"/>--> <!-- Total sector/TG nuber -->
+                        <!--  <parameter name="bcchNoList" value="107"/>--> <!-- bcchNo for each sector , if you have more than 1 cell, use "," to divide-->
+                        <!--  <parameter name="trxDistributionList" value="0,11"/>--> <!-- eg: 0,3;0,3;0,3 means create Trx0-Trx3 for first sector, create Trx0-Trx3 for second sector, Trx number should start from 0 -->
+                        <!--  <parameter name="trxsectorDistributionList" value="0,3,1:4,7,2:8,11,3"/>--> <!-- eg: 0,3,1:4,7,2;0,3,3 means create Trx0 -Trx7 for first sector, Trx0-Trx3 ref is SectorEquipmentFunction=1, Trx4-Trx7 ref is SectorEquipmentFunction=2, create Trx0-Trx3 for second sector, ref is SectorEquipmentFunction=3 -->
+                        <parameter name="numOfTGs" value="1" />
+                        <parameter name="numOfTrxesPerTG" value="12" />
+                        <parameter name="isRunManually" value="false"/> <!-- Run "manually", start/stop LTS is done via pop-up window. -->
+                        <parameter name="callSetupRate" value="12000"/> <!-- Call Setup Rate (CSR) 12000/1000 = 12 calls/s for TG1 ; If tg number > 1, use "," to split callSetupRate for each TG, eg: 12000,11000,10000.-->
+                        <parameter name="smsSetupRate" value="1100"/> <!-- SMS Setup Rate (SPR) 1100/1000 = 1.1 sms/s for TG1; If tg number > 1, use "," to split smsSetupRate for each TG, eg: 1100,1000,1000.-->
+                        <parameter name="callDuration" value="8"/> <!-- Call Duration is time of call in seconds; If tg number > 1, use "," to split callDuration for each TG, eg: 8,9,8  -->
+                        <parameter name="percentageFR" value="10"/> <!-- 10% FR calls for TG1 ; If tg number > 1, use "," to split percentageFR for each TG, eg: 10,10,10-->
+                        <parameter name="percentageEFR" value="90"/> <!-- 90% FR calls ; If tg number > 1, use "," to split percentageFR for each TG, eg: 90,90,90 -->
+                        <parameter name="loadTestDuration" value="300"/> <!-- Duration of stability load test in seconds. Not used if manual. -->
+                        <parameter name="ccchLoadPagingRate" value="26400"/><!-- 26 paging per sec for TG1 ; If tg number > 1, use "," to split ccchLoadPagingRate for each TG, eg: 26,25,26 -->
+                        <parameter name="ccchLoadLRSAssRate" value="3000"/><!-- 3 Immediate assignment per sec for TG1 ; If tg number > 1, use "," to split ccchLoadLRSAssRate for each TG, eg: 3,3,2-->
+                        <parameter name="ccchLoadLRSAssRejRate" value="3000"/><!-- 3 Immediate assignment reject per sec for TG1 ; If tg number > 1, use "," to split ccchLoadLRSAssRejRate for each TG, eg: 3,3,3-->
+                        <parameter name="ccchLoadPSPagingRatio" value="50"/><!-- 50% Paging Ratio for TG1 ; If tg number > 1, use "," to split ccchLoadPSPagingRatio for each TG, eg: 50,50,50-->
+                        <parameter name="restartTimes" value="10"/>
+                        <parameter name="restartRank" value="cold"/>
+                    </include>
+                </methods>
+           </class>
+        </classes>
+    </test>
+</suite>

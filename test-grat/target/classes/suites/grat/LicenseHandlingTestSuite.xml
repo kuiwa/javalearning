@@ -1,0 +1,39 @@
+<!-- not used for the moment suite name="LicenseHandling" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+    <test name="Unlock MOs with disabled license">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.licensehandling.UnlockMoWithDisabledLicenseTest">
+                <methods>
+                    <include name="unlockAbisIpTrxWithDisabledLicense" />
+                    <parameter name="testId" value=""/>
+                    <parameter name="description" value="Unlock TRX and AbisIp with a disabled license" />   
+                    <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                    <parameter name="FAJ" value="N/A" />
+                    <parameter name="Test slogan" value="Unlock TRX and AbisIp with a disabled license" />
+                    <parameter name="NODEUC" value="NodeUC459.A3" />
+                    <parameter name="NODEUC" value="NodeUC459.A4" />
+                    <parameter name="NODEUC" value="NodeUC426.A8" />
+                    <parameter name="NODEUC" value="NodeUC426.A9" />
+                </methods>
+            </class>
+        </classes>
+    </test>  
+  	<test name="Unlock MOs with deactivated license">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.licensehandling.UnlockMoWithDeactivatedLicenseTest">
+				<methods>
+					<include name="unlockAbisIpTrxWithDeactivatedLicense" />
+					<parameter name="testId" value=""/>
+					<parameter name="description" value="Unlock TRX and AbisIp with a deactivated license" />	
+                    <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                    <parameter name="FAJ" value="N/A" />
+                    <parameter name="Test slogan" value="Unlock TRX and AbisIp with a deactivated license" />
+                    <parameter name="NODEUC" value="NodeUC459.A4" />
+                    <parameter name="NODEUC" value="NodeUC426.A9" />			
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite-->

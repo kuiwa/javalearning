@@ -1,0 +1,21 @@
+<suite name="DormantCharacteristicTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Synch Test">
+		<classes>
+		 	<class name="com.ericsson.msran.test.grat.dormantstate.DormantCharacteristicTest">
+				<methods>
+					<include name="dormantCharacteristics">
+						<parameter name="testId" value="LTE00214540" />
+						<parameter name="testDescription" value="Verify the GRAT CPU load and memory consumption in dormant state" />
+                        <parameter name="QA" value="CAPACITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Verify the GRAT CPU load and memory consumption in dormant state" />
+                        <parameter name="NODEUC" value="NodeSF204" />						
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

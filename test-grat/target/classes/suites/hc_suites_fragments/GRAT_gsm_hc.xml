@@ -1,0 +1,70 @@
+<suite name="GRAT HC Fragments" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+
+	<test name="First CallSetup">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.firstcall.FirstCallTest">
+				<methods>
+					<include name="firstCallTxRxTs">
+						<parameter name="testId" value="NodeUCXXX.N"/>
+						<parameter name="description" value="Configure up to sysInfo"/>
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+    <test name="LockUnlockAbisIpTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlockabisip.LockUnlockAbisIpTest">
+				<methods>
+					<include name="createUnlockAbisIpInOneTxLockDeleteAbisIpInOnTx" >
+                        <parameter name="testId" value="NodeUC457.N, NodeUC459.N, NodeUC458.N, NodeUC461.N"/>
+                        <parameter name="description" value="Create and unlock AbisIp in the same Tx, lock and delete AbisIp in the same Tx " />
+                    </include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+  	<test name="LockUnlockTrxTest ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=1">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.LockUnlockTrxTest">
+				<methods>
+					<include name="lockDeleteTrx" >
+						<parameter name="testId" value="NodeUC426.N,NodeUC428.N"/>
+						<parameter name="description" value="Unlock TRX - Lock and Delete TRX same transaction" />
+					</include> 
+				</methods>
+			</class>
+		</classes>
+	</test>  
+			
+	<test name="Bsc Disconnected Reconnected Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscDisconnectedReconnected">
+				<methods>
+					<include name="bscDisconnectedReconnect" />
+						<parameter name="testId" value="NodeUC524.N,NodeUC524.A1,NodeUC524.A3"/>
+						<parameter name="description" value="Bsc disconnected and then reconnected"/>
+				</methods>
+			</class>
+        </classes>
+    </test> 
+    <test name="Multiple GsmSectors with multiple Trxes">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.MultipleSectorsWithMultipleTrxes">
+                <methods>   
+                    <include name="multipleGsmSectorsWithMultipleTrxes_1" >
+                        <parameter name="testId" value="UC419.N, UC420.N, UC424.N, UC425.N, UC426.A4, UC428.N, UC457.N, UC458.N , UC459.N, UC461.N"/>
+                        <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each." />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test> 
+</suite>

@@ -1,0 +1,23 @@
+<suite name="SmsPointToPointTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="SMS Point to Point">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.smsp2p.SmsPointToPointMO">
+				<methods>
+					<include name="SmsPointToPointMOTest" />
+					<parameter name="testId" value="LTE00237844"/>
+					<parameter name="description" value="Verify SMS p2p MO (SDCCH)" />				
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.smsp2p.SmsPointToPointMT">
+				<methods>
+					<include name="SmsPointToPointMTTest" />
+					<parameter name="testId" value="LTE00237962"/>
+					<parameter name="description" value="Verify SMS p2p MT (SDCCH)" />				
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

@@ -1,0 +1,64 @@
+<suite name="MultipleGsmSectorsWithMultipleTrxesSuite" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Multiple GsmSectors with multiple Trxes">
+		<classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.MultipleSectorsWithMultipleTrxes">
+                <methods>   
+                    <include name="multipleGsmSectorsWithMultipleTrxes_1" >
+                        <parameter name="testId" value="LTE00207356"/>
+                        <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Test transport with two GsmSectors with two Trx:es each." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>
+                    <include name="multipleGsmSectorsWithMultipleTrxes_2" >
+                        <parameter name="testId" value="LTE00207356"/>
+                        <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Test transport with two GsmSectors with two Trx:es each." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>
+                    <include name="GsmSectorWithMultipleTrxes_1" >
+                        <parameter name="testId" value="LTE00207356"/>
+                        <parameter name="description" value="Test transport with one GsmSector with two Trxes, non-default AT config." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Test transport with one GsmSector with two Trxes, non-default AT config." />
+						<parameter name="NODEUC" value="UC419.N" />
+						<parameter name="NODEUC" value="UC420.N" />
+						<parameter name="NODEUC" value="UC424.N" />
+						<parameter name="NODEUC" value="UC425.N" />
+						<parameter name="NODEUC" value="UC426.A4" />
+						<parameter name="NODEUC" value="UC428.N" />
+						<parameter name="NODEUC" value="UC457.N" />
+						<parameter name="NODEUC" value="UC458.N" />
+						<parameter name="NODEUC" value="UC459.N" />
+						<parameter name="NODEUC" value="UC461.N" />
+                    </include>
+                </methods>
+            </class>
+		</classes>
+	</test> 
+</suite>

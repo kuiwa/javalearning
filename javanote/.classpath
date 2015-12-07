@@ -16,7 +16,6 @@
 	<classpathentry kind="src" path="src/chapter4"/>
 	<classpathentry kind="src" path="src/chapter5"/>
 	<classpathentry kind="src" path="src/chapter6"/>
-	<classpathentry excluding="src/main/java/|src/test/java/|src/chapter4/|src/chapter5/|src/chapter6/|src/|src/chapter7/" kind="src" path=""/>
 	<classpathentry kind="src" path="src/chapter7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>

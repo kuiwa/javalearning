@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="restart_node_and_tss" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="RestartNodeTest1">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.restartnode.RestartNodeTest">
+				<methods>
+					<include name="restartNode">
+						<parameter name="testId" value="GRAT000000"/>
+						<parameter name="description" value="Restart Node and TSS, make sure everything starts up correctly"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

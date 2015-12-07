@@ -1,0 +1,202 @@
+<suite name="GRAT DC - Without NC tests" parallel="false"
+	rbsGeneration="gen2" boardType ="DUS">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+		<listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+
+	<suite-files>
+		<suite-file path="GRAT_DC_common.xml" />
+	</suite-files>
+
+    <test name="Complete Startup">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.completestartup.CompleteStartupTest">
+                <methods>
+                    <include name="completeStartup" >
+                        <parameter name="testId" value="GRAT000025" />
+                        <parameter name="description" value="Complete startup of all MOs, one sector with four TRXs." />
+                        <parameter name="numOfTGs" value="1" />
+                        <parameter name="numOfTrxesPerTG" value="4" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>	
+	
+	<test name="CreateDeleteAbisIpTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.createdeleteabisip.CreateDeleteAbisIpTest">
+				<methods>
+					<include name="createDeleteAbisIp" >
+						<parameter name="testId" value="NodeUC457.N, NodeUC458.N"/>
+						<parameter name="description" value="Create AbisIp - Delete AbisIp" />                                         
+					</include>
+					<include name="deleteAbisIpFails" >
+						<parameter name="testId" value="NodeUC458.E1"/>
+						<parameter name="description" value="Delete unlocked AbisIp" />                                         
+					</include>
+					<include name="createAbisIpFails" >
+						<parameter name="testId" value="NodeUC457.E1"/>
+						<parameter name="description" value="Create AbisIp with invalid ipv4AddressRef" />                                         
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    
+    <test name="LockUnlockAbisIpTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlockabisip.LockUnlockAbisIpTest">
+				<methods>
+                    <include name="unlockAbisIpWithRedirect" >
+                        <parameter name="testId" value="Node459.A1"/>
+                        <parameter name="description" value="unlock AbisIp and the BSC redirects the connection to one or more IP addresses" />
+                    </include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="UpdateAbisIpAttributeTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.updateabisipattribute.UpdateAbisIpAttributeTest">
+				<methods>
+					<include name="updateAbisIpAttributes" >
+						<parameter name="testId" value="NodeUC525.N"/>
+						<parameter name="description" value="Update AbisIp attributes when LOCKED" />                                         
+					</include>
+					<include name="updateAbisIpAttributeWhenUnlocked" >
+						<parameter name="testId" value="NodeUC525.E1"/>
+						<parameter name="description" value="Update AbisIp attributes when UNLOCKED" />                                         
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+	<test name="Start Request Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.startrequest.StartRequestTest">
+				<methods>   
+					<include name="startRequestSoScf">
+						<parameter name="testId" value="NodeUC476.N"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF"/>
+					</include>
+					<include name="startRequestSoScfNegotiationUnsuccessful">
+						<parameter name="testId" value="NodeUC476.E1"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation not successful"/>
+					</include>
+					<include name="startRequestSoScfNegotiationTimeout">
+						<parameter name="testId" value="NodeUC476.E2"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation timeout"/>
+					</include>
+					<include name="startRequestSoScfNegotiationNak">
+						<parameter name="testId" value="NodeUC476.E3"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation with negative acknowledgement"/>
+					</include>					
+					<include name="startRequestAoTf">
+						<parameter name="testId" value="NodeUC509.N"/>
+						<parameter name="description" value="Abis TF Start"/>
+					</include>
+					<include name="startRequestAoAt">
+						<parameter name="testId" value="NodeUC644.N"/>
+						<parameter name="description" value="Abis AT Start"/>
+					</include>   
+				</methods>
+			</class>
+        </classes>
+    </test>
+    
+    <test name="Disable Request Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.disablerequest.DisableRequestTest">
+                <methods>
+                    <include name="disableRequestAoTf">
+                        <parameter name="testId" value="NodeUC511.N"/>
+                        <parameter name="description" value="Abis TF Disable"/>
+                    </include>
+                    <include name="disableRequestAoTx">
+                        <parameter name="testId" value="NodeUC600.N"/>
+                        <parameter name="description" value="Abis TX Disable"/>
+                    </include>
+                    <include name="disableRequestAoTxInStateDisabled">
+                        <parameter name="testId" value="NodeUC600.A1"/>
+                        <parameter name="description" value="Abis TX Disable"/>
+                    </include>              
+                    <include name="disableRequestAoRx">
+                        <parameter name="testId" value="NodeUC605.N"/>
+                        <parameter name="description" value="Abis RX Disable"/>
+                    </include>
+                    <include name="disableRequestAoRxInStateDisabled">
+                        <parameter name="testId" value="NodeUC605.A1"/>
+                        <parameter name="description" value="Abis RX Disable when already disabled"/>
+                    </include>   
+                   	<include name="disableRequestAllAoTs">
+						<parameter name="testId" value="NodeUC625.N"/>
+						<parameter name="description" value="Abis TS Disable"/>
+					</include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+	<test name="Bsc Disconnected Reconnected Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscDisconnectedReconnected">
+				<methods>
+					<include name="bscDisconnectedReconnect" />
+						<parameter name="testId" value="NodeUC524.N,NodeUC524.A1,NodeUC524.A3"/>
+						<parameter name="description" value="Bsc disconnected and then reconnected"/>
+				</methods>
+			</class>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscDisconnectsL2">
+				<methods>
+					<include name="bscDisconnectsL2Reconnect" >
+						<parameter name="testId" value="NodeUC524.A2,NodeUC524.A1,NodeUC524.A3"/>
+						<parameter name="description" value="Detect and report that BSC disconnects L2, then re-connect and establish links" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Bsc Link Released And Established Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.abislinkbreak.BscLinkReleasedAndEstablishedTest">
+				<methods>
+					<include name="bscLinkReleasedAndEstablishedTest" />
+                    	<parameter name="testId" value="NodeUC524.A3,NodeUC524.A4,NodeUC524.A3"/>
+						<parameter name="description" value="BSC link released and reestablished"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Radio Channel Release Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.radiochannelsrelease.RadioChannelsReleaseTest">
+				<methods>
+					<include name="radioChannelsRelease">
+						<parameter name="testId" value="NodeUC628.N"/>
+						<parameter name="description" value="Verifiy Radio Channel Release"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+    <test name="Multiple GsmSectors with multiple Trxes">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.lockunlocktrx.MultipleSectorsWithMultipleTrxes">
+                <methods>   
+                    <include name="multipleGsmSectorsWithMultipleTrxes_1" >
+                        <parameter name="testId" value="UC419.N, UC420.N, UC424.N, UC425.N, UC426.A4, UC428.N, UC457.N, UC458.N , UC459.N, UC461.N"/>
+                        <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each." />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    
+</suite>

@@ -1,0 +1,51 @@
+<suite name="FirstCallSetupSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+        <listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+	</listeners>
+	<test name="Set up and disconnect a call">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.firstcall.FirstCallTest">
+				<methods>
+					<include name="firstCallMsSim">
+						<parameter name="testId" value="LTE00234899"/>
+						<parameter name="description" value="Set up and disconnect a call towards passive answering MSSSIM"/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Set up and disconnect a call towards passive answering MSSSIM"/>
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Call, SMS, PowerChange and Intracell HO">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.tm_mssim.SpeechCallSetupEarlyAssignment">
+				<methods>
+					<include name="extendedFirstCallMsSim">
+						<parameter name="testId" value="LTE00234904"/>
+						<parameter name="description" value="Setup call MT, in call send SMS, measure and change MS power and Intra cell HO."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Setup call MT, in call send SMS, measure and change MS power and Intra cell HO." />
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Call with encryption enabled">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.tm_mssim.SpeechCallSetupEarlyAssignment">
+				<methods>
+					<include name="extendedFirstCallEncryptionMsSim">
+						<parameter name="testId" value="LTE00238063"/>
+						<parameter name="description" value="Setup call MT with encryption A5/3, also use encryption command with A5/1 and A5/3."/>
+						<parameter name="QA" value="FUNCTIONALITY" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Setup call MT with encryption A5/3, also use encryption command with A5/1 and A5/3." />
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

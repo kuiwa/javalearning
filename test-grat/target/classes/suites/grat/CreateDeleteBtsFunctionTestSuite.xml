@@ -1,0 +1,24 @@
+<suite name="CreateDeleteBtsFunctionTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+    </listeners>
+    <test name="CreateDeleteBtsFunctionTest">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.createdeletebtsfunction.CreateDeleteBtsFunctionTest">
+                <methods>
+                    <include name="createDeleteBtsFunction" >
+                        <parameter name="testId" value="LTE00207204"/>
+                        <parameter name="description" value="Create BtsFunction - Delete BtsFunction" />       
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Create BtsFunction - Delete BtsFunction" />
+						<parameter name="NODEUC" value="NodeUC729.N" />
+						<parameter name="NODEUC" value="NodeUC729.E1" />
+						<parameter name="NODEUC" value="NodeUC730.N" />
+						<parameter name="NODEUC" value="NodeUC730.E1" />						
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>  
+</suite>

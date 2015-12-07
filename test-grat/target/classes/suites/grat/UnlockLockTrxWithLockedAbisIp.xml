@@ -1,0 +1,28 @@
+<suite name="UnlockLockTrxWithLockedAbisIp" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+  	<test name="unlockLockTrxWithLockedAbisIp ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=0">
+  		<meta name="suiteGenInput">
+  			<parameter name="deliverycheck" value="include"/>
+			<parameter name="status" value="legacy"/>
+  		</meta>
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxWithLockedAbisIpTest">
+				<methods>
+					<include name="unlockLockTrxWithLockedAbisIp" >
+						<parameter name="testId" value="LTE00207360"/>
+						<parameter name="description" value="Unlock and lock Trx MO with locked AbisIp." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock and lock Trx MO with locked AbisIp." />
+						<parameter name="NODEUC" value="NodeUC426.A2" />								
+						<parameter name="NODEUC" value="NodeUC428.A2" />
+						<parameter name="NODEUC" value="NodeUC524.A3" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

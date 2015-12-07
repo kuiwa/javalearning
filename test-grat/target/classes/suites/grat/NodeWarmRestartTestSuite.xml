@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="restart_node_and_tss" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="WarmRestartNodeTest">
+		<classes>          
+			<class name="com.ericsson.msran.test.grat.warmrestartnode.WarmRestartNodeTest">
+				<methods>
+					<include name="warmRestartTestCase1">
+						<parameter name="testId" value="LTE00235850"/>
+						<parameter name="description" value="Unlock Trx with links, warm restart node and calculate restart time"/>
+						<parameter name="enableRestartTimeReport2Web" value="true" />
+						<parameter name="restartChartName" value="pdu-dura-bb-wrat-chart-grat-chart-warm-restart"/>
+					</include>
+				    <include name="warmRestartTestCase2">
+						<parameter name="testId" value="LTE00235852"/>
+						<parameter name="description" value="Two Trxes are locked, warm restart node and calculate restart time"/>
+					</include>
+					<include name="coldRestartForReference">
+						<parameter name="testId" value="LTE00236684"/>
+						<parameter name="description" value="Unlock Trx with links, cold restart node and calculate restart time"/>
+						<parameter name="enableRestartTimeReport2Web" value="true" />
+						<parameter name="restartChartName" value="pdu-dura-bb-wrat-chart-grat-chart-cold-restart"/>
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+</suite>

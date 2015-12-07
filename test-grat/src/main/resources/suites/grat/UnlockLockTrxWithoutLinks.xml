@@ -1,0 +1,27 @@
+<suite name="UnlockLockTrxWithoutLinks" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+
+  	<test name="unlockLockTrxWithoutLinks ManagedElement=1,BtsFunction=1,GsmSector=1,Trx=0">
+  		<meta name="suiteGenInput">
+  			<parameter name="deliverycheck" value="include"/>
+			<parameter name="status" value="legacy"/>
+  		</meta>
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.lockunlocktrx.UnlockLockTrxWithoutLinksTest">
+				<methods>
+					<include name="unlockLockTrxWithoutLinks" >
+						<parameter name="testId" value="LTE00207362"/>
+						<parameter name="description" value="Unlock TRX - Lock TRX without links." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Unlock TRX - Lock TRX without links." />
+						<parameter name="NODEUC" value="NodeUC426.A4" />
+						<parameter name="NODEUC" value="NodeUC428.A2" />		
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

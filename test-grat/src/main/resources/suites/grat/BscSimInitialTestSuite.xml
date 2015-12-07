@@ -1,0 +1,32 @@
+<suite name="BscSimInitialTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+    <listeners>
+        <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+    </listeners>
+    <test name="eL2TP Transport Test">
+        <classes>
+            <class name="com.ericsson.msran.test.grat.transport.BscSimInitialTest" />
+            <methods>
+                <include name="bscSimConnectionTest">
+                    <parameter name="testId" value="GRAT000024" />
+                    <parameter name="description" value="Test case that tests the BscSim connection. Currently dummy test using Wireshark to verify." />
+                </include>
+                <!-- <include name="el2TpTrafficTest">
+                    <parameter name="testId" value="GRAT000020" />
+                    <parameter name="description" value="Test case that tests the normal flow for el2tp traffic." />
+                </include>
+                <include name="lapdReestablishTest">
+                    <parameter name="testId" value="GRAT000021" />
+                    <parameter name="description" value="Test that an existing LAPD entity/session recovers and is re-established after link break." />
+                </include>
+                <include name="lapdStartStopTest">
+                    <parameter name="testId" value="GRAT000022" />
+                    <parameter name="description" value="Test case that tests the normal setup and tear down of LAPD link." />
+                </include>
+                <include name="testDeleteOnUnlockedAbisIpMo">
+                    <parameter name="testId" value="GRAT000023" />
+                    <parameter name="description" value="Test case that tries to delete a unlocked AbisIP MO." />
+                </include> -->
+            </methods>
+        </classes>
+    </test>
+</suite>

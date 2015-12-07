@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="msran-jcat-extension">
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.3.0</version>
+    </skin>
+
+    <custom>
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <sideBarEnabled>false</sideBarEnabled>
+        </fluidoSkin>
+    </custom>
+
+    <body>
+        <menu name="${project.name}">
+            <item name="Intro" href="./index.html" />
+            <item name="Javadoc (MJE + RM)" href="./apidocs/index.html" />
+            <item name="View Source" href="./xref/index.html" />
+            <item name="Get Source" href="./source-repository.html" />
+            <item name="Dependencies" href="./dependencies.html" />
+            <item name="View Unit Test Source" href="./xref-test/index.html" />
+            <item name="Unit Test Report" href="./surefire-report.html" />
+            <item name="Project Summary" href="./project-summary.html" />
+        </menu>
+        <menu name="More about this test project">
+            <item name="More?" href="./more_details.html" collapse="false" />
+        </menu>
+
+        <menu name="Configuration">
+            <item name="default-msran.properties" href="default-msran.properties" />
+        </menu>
+        <menu name="Related Projects">
+            <item name="MSRAN JCAT Extensions (MJE)" href="http://jcat.cn.ao.ericsson.se:8880/msran-jcat-extensions/latest/" collapse="false" />
+            <item name="Resource Manager" href="http://jcat.cn.ao.ericsson.se:8880/resource-manager/latest/" collapse="false" />
+        </menu>
+
+    </body>
+</project>

@@ -1,0 +1,38 @@
+<suite name="NodeIdentityExchangeRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+
+	<test name="Node Identity Exchange Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.nodeidentityexchange.NodeIdentityExchangeRequestTest">
+				<methods>
+					<include name="nodeIdentityExchangeRequest">
+						<parameter name="testId" value="LTE00207371" />
+						<parameter name="description" value="Abis OML Node Identity Exchange EP on SO SCF." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Node Identity Exchange EP on SO SCF." />
+						<parameter name="NODEUC" value="NodeUC651.N" />									
+					</include>
+					<include name="nodeIdentityExchangeRequest_SoScf_Not_Started">
+						<parameter name="testId" value="LTE00207371" />
+						<parameter name="description" value="Abis OML Node Identity Exchange EP on SO SCF, So Scf not started, expects a Node Identity Exchange Reject." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Node Identity Exchange EP on SO SCF, So Scf not started, expects a Node Identity Exchange Reject." />
+						<parameter name="NODEUC" value="NodeUC479.E2" />										
+					</include>
+					<include name="nodeIdentityExchangeRequest_Attribute_Error">
+						<parameter name="testId" value="LTE00207371" />
+						<parameter name="description" value="Abis OML Node Identity Exchange EP on SO SCF, attribute in request contains an error, expects a Node Identity Exchange Reject." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Node Identity Exchange EP on SO SCF, attribute in request contains an error, expects a Node Identity Exchange Reject." />
+						<parameter name="NODEUC" value="NodeUC479.E1" />									
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,53 @@
+<suite name="StatusRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT"> 
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Status Request Test">
+		<classes>          									
+			<class name="com.ericsson.msran.test.grat.statusrequest.StatusRequestTest">
+				<methods>
+					<include name="statusRequest">
+						<parameter name="testId" value="LTE00207384"/>
+						<parameter name="description" value="Abis OML Status Request EP on SO SCF, AO TF and AO AT."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Status Request EP on SO SCF, AO TF and AO AT." />
+						<parameter name="NODEUC" value="NodeUC478.N" />			
+					</include>
+					<include name="statusRequestSoTrxcAoTxAoRx">
+                        <parameter name="testId" value="LTE00207384"/>
+                        <parameter name="description" value="Abis OML Status Request EP on SO TRXC, AO TX and AO RX."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Status Request EP on SO TRXC, AO TX and AO RX." />
+						<parameter name="NODEUC" value="NodeUC478.N" />			
+                    </include>
+                    <include name="statusRequestAoTs">
+                        <parameter name="testId" value="LTE00207384"/>
+                        <parameter name="description" value="Abis OML Status Request EP on AO TS."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Status Request EP on AO TS." />
+						<parameter name="NODEUC" value="NodeUC478.N" />			                        
+                    </include>
+                    <include name="statusRequestAoAt">
+                        <parameter name="testId" value="LTE00207384"/>
+                        <parameter name="description" value="Abis OML Status Request EP on AO AT."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Status Request EP on AO AT." />
+						<parameter name="NODEUC" value="NodeUC478.N" />			                        
+                    </include>
+                    <include name="statusRequestAoAt_SoScfNotStarted">
+                        <parameter name="testId" value="LTE00207384"/>
+                        <parameter name="description" value="Abis OML Status Request EP on AO AT when SO SCF is not in state STARTED."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Status Request EP on AO AT when SO SCF is not in state STARTED." />
+						<parameter name="NODEUC" value="NodeUC479.E2" />			                        
+                    </include>
+ 				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

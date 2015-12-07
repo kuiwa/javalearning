@@ -1,0 +1,53 @@
+<suite name="LinkEstablishIndicationConEstTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Link Establish Indication Contation Establishment Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.linkestablishindication.LinkEstablishIndicationConEst"> 
+				<methods>
+					<include name="linkEstablishIndicationConEstSubTc1Test" >
+                         <parameter name="testId" value="LTE00230716"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Contention Establishment, channel Combination (i)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Contention Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+					</include>
+					<include name="linkEstablishIndicationConEstSubTc2Test" >
+                         <parameter name="testId" value="LTE00230716"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Contention Establishment, channel Combination (ii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Contention Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+					</include>
+					<include name="linkEstablishIndicationConEstSubTc3Test" >
+                         <parameter name="testId" value="LTE00230716"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Contention Establishment, channel Combination (v)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Contention Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+					</include>
+					<include name="linkEstablishIndicationConEstSubTc4Test" >
+                         <parameter name="testId" value="LTE00230716"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Contention Establishment, channel Combination (vii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Contention Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+					</include>
+					<include name="linkEstablishIndicationConEstSubTc5Test" >
+                         <parameter name="testId" value="LTE00230716"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Contention Establishment, channel Combination (viii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Contention Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

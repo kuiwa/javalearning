@@ -1,0 +1,225 @@
+<suite name="SoftwareUpgradeTestSuite" parallel="false" preserve-order="true" rbsGeneration="gen2" standard="GRAT">
+  <listeners>
+    <listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+    <listener class-name="com.ericsson.msran.test.grat.testhelpers.GratTestListener"/>
+  </listeners>
+  
+  <test name="GRAT software upgrade fetch and unpack to-state upgrade package" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="prepareUpgradePackageStep" >
+            <parameter name="testId" value="LTE00220829"/>
+            <parameter name="description" value="fetch and unpack to-state upgrade package to sftp server path"/>
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+   
+  <test name="GRAT software upgrade create and prepare upgrade package" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="createAndPrepareUpgradePackage" >
+          	<parameter name="testId" value="LTE00214467"/>
+          	<parameter name="description" value="createUpgradePackage in SwM=1"/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>            
+            <parameter name="NODEUC" value="NodeUC416.N.1"/>
+            <parameter name="NODEUC" value="NodeUC416.N.3"/>            
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test name="check pre-conditions with AbisIp Locked " >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="verifyUpgradePackageLockedAbisIp" >
+          	<parameter name="testId" value="LTE00220829"/>
+            <parameter name="description" value="verify Preconditions with AbisIp Locked"/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+            <parameter name="Test slogan" value="verify Preconditions with AbisIp Locked"/>
+            <parameter name="NODEUC" value="NodeUC416.A6"/>
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test name="check pre-conditions with AbisIp Operstate Disabled" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="verifyAbisIpOperstateDisable" >
+          	<parameter name="testId" value="LTE00214469"/>
+            <parameter name="description" value="check pre-conditions with AbisIp Operstate Disabled"/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+            <parameter name="Test slogan" value="check pre-conditions with AbisIp Operstate Disabled"/>
+            <parameter name="NODEUC" value="NodeUC416.A7"/>
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test name="check pre-conditions with OML Down" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="verifyUpgradePackageOmlDown" >
+          	<parameter name="testId" value="LTE00214473"/>
+         	<parameter name="description" value="check pre-conditions with OML Down"/>
+          	<parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+          	<parameter name="Test slogan" value="check pre-conditions with OML Down"/>
+          	<parameter name="NODEUC" value="NodeUC416.A7"/>
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test name="check pre-conditions with two sectors" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest" >
+        <methods>
+          <include name="verifyUpgradePackageMultiSector" >
+            <parameter name="testId" value="LTE00214475"/>
+          	<parameter name="description" value="check pre-conditions with two sectors"/>
+          	<parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+          	<parameter name="Test slogan" value="check pre-conditions with two sectors"/>
+          	<parameter name="NODEUC" value="NodeUC416.A7"/>
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>  
+  
+  <test name="test Multiple GsmSectors with multiple Trxes before software upgrade">
+    <classes>
+      <class name="com.ericsson.msran.test.grat.lockunlocktrx.MultipleSectorsWithMultipleTrxes">
+        <methods>
+          <include name="multipleGsmSectorsWithMultipleTrxes_1" >
+            <parameter name="testId" value="LTE00220831"/>
+            <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each."/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+            <parameter name="Test slogan" value="Test transport with two GsmSectors with two Trx:es each."/>
+            <parameter name="NODEUC" value="UC419.N" />
+            <parameter name="NODEUC" value="UC420.N" />
+            <parameter name="NODEUC" value="UC424.N" />
+            <parameter name="NODEUC" value="UC425.N" />
+            <parameter name="NODEUC" value="UC426.A4" />
+            <parameter name="NODEUC" value="UC428.N" />
+            <parameter name="NODEUC" value="UC457.N" />
+            <parameter name="NODEUC" value="UC458.N" />
+            <parameter name="NODEUC" value="UC459.N" />
+            <parameter name="NODEUC" value="UC461.N" />
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  
+  <test name="GRAT software upgrade verify, unlock trx, activate and confirm on non-Dormant State" >
+    <classes>
+      <class name="com.ericsson.msran.test.grat.softwareupgrade.SoftwareUpgradeTest">
+        <methods>
+          <include name="verifyActivateConfirmOnNonDormantState">
+            <parameter name="testId" value="LTE00220829"/>
+            <parameter name="description" value="verify activate and confirm on non-Dormant State"/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+            <parameter name="Test slogan" value="verify activate and confirm on non-Dormant State"/>
+            <parameter name="NODEUC" value="NodeUC416.N"/> 
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test name="Multiple GsmSectors with multiple Trxes after software upgrade">
+    <classes>
+      <class name="com.ericsson.msran.test.grat.lockunlocktrx.MultipleSectorsWithMultipleTrxes">
+        <methods>
+          <include name="multipleGsmSectorsWithMultipleTrxes_1" >
+            <parameter name="testId" value="LTE00220831"/>
+            <parameter name="description" value="Test transport with two GsmSectors with two Trx:es each."/>
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE"/>
+            <parameter name="Test slogan" value="Test transport with two GsmSectors with two Trx:es each."/>
+            <parameter name="NODEUC" value="UC419.N" />
+            <parameter name="NODEUC" value="UC420.N" />
+            <parameter name="NODEUC" value="UC424.N" />
+            <parameter name="NODEUC" value="UC425.N" />
+            <parameter name="NODEUC" value="UC426.A4" />
+            <parameter name="NODEUC" value="UC428.N" />
+            <parameter name="NODEUC" value="UC457.N" />
+            <parameter name="NODEUC" value="UC458.N" />
+            <parameter name="NODEUC" value="UC459.N" />
+            <parameter name="NODEUC" value="UC461.N" />
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  
+  <test name="WarmRestartNodeTest">
+    <classes>          
+	  <class name="com.ericsson.msran.test.grat.warmrestartnode.WarmRestartNodeTest">
+		<methods>
+		  <include name="warmRestartTestCase1">
+		    <parameter name="testId" value="LTE00235850"/>
+			<parameter name="description" value="Unlock Trx with links, warm restart node and calculate restart time"/>
+			<parameter name="enableRestartTimeReport2Web" value="true" />
+			<parameter name="restartChartName" value="pdu-dura-bb-wrat-chart-grat-chart-warm-restart"/>
+		  </include>
+		  <include name="warmRestartTestCase2">
+		    <parameter name="testId" value="LTE00235852"/>
+			<parameter name="description" value="Two Trxes are locked, warm restart node and calculate restart time"/>
+		  </include>
+		  <include name="coldRestartForReference">
+			<parameter name="testId" value="LTE00236684"/>
+			<parameter name="description" value="Unlock Trx with links, cold restart node and calculate restart time"/>
+			<parameter name="enableRestartTimeReport2Web" value="true" />
+			<parameter name="restartChartName" value="pdu-dura-bb-wrat-chart-grat-chart-cold-restart"/>
+		  </include>
+		</methods>
+	  </class>
+	</classes>
+  </test>	
+  
+  <test name="BbInternalFaultTest1">
+	<classes>          									
+  	  <class name="com.ericsson.msran.test.grat.bbInternalFault.BbInternalFaultTest">
+		<methods>
+		  <include name="makeReoveryFromResetSoTrxc">
+			<parameter name="testId" value="LTE00231242"/>
+			<parameter name="description" value="Baseband internal fault is detected and reset SO TRXC" />
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+            <parameter name="FAJ" value="N/A" />
+            <parameter name="Test slogan" value="Baseband internal fault is detected and reset SO TRXC" />
+            <parameter name="NODEUC" value="NodeUC629.A2" />
+		  </include>
+		  <include name="makeReoveryFromEscalation">
+			<parameter name="testId" value="LTE00231254"/>
+			<parameter name="description" value="Baseband internal fault are detected twice within 5 minutes, rest AO RX and restart board are performed" />
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+            <parameter name="FAJ" value="N/A" />
+            <parameter name="Test slogan" value="Baseband internal fault are detected twice within 5 minutes, rest AO RX and restart board are performed" />
+            <parameter name="NODEUC" value="NodeUC629.A3" />
+            <parameter name="NODEUC" value="NodeUC629.A4" />
+		  </include>
+		  <include name="makeReoveryFromResetBoard">
+			<parameter name="testId" value="LTE00231263"/>
+			<parameter name="description" value="Baseband internal fault is detected and restart board is performed" />
+            <parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+            <parameter name="FAJ" value="N/A" />
+            <parameter name="Test slogan" value="Baseband internal fault is detected and restart board is performed" />
+            <parameter name="NODEUC" value="NodeUC629.A5" />
+		  </include>
+		</methods>
+	  </class>
+    </classes>
+  </test>
+
+</suite>

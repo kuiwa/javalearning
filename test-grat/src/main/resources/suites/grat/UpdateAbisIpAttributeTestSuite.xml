@@ -1,0 +1,29 @@
+<suite name="UpdateAbisIpAttributeTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="UpdateAbisIpAttributeTest ManagedElement=1,BtsFunction=1,GsmSector=1,AbisIp=1">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.updateabisipattribute.UpdateAbisIpAttributeTest">
+				<methods>
+					<include name="updateAbisIpAttributes" >
+						<parameter name="testId" value="NodeUC525.N"/>
+						<parameter name="description" value="Update AbisIp attributes when LOCKED." />     
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Update AbisIp attributes when LOCKED." />
+						<parameter name="NODEUC" value="NodeUC525.N" />								
+					</include>
+					<include name="updateAbisIpAttributeWhenUnlocked" >
+						<parameter name="testId" value="NodeUC525.E1"/>
+						<parameter name="description" value="Update AbisIp attributes when UNLOCKED." />
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Update AbisIp attributes when UNLOCKED." />
+						<parameter name="NODEUC" value="NodeUC525.E1" />		
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

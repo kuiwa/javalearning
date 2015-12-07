@@ -1,0 +1,246 @@
+<suite name="ConfigurationRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="Configuration Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.configurationrequest.ConfigurationRequestTest">
+				<methods>
+					<include name="tfConfigurationRequest">
+						<parameter name="testId" value="LTE00219582"/>
+						<parameter name="description" value="Abis TF Configuration"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration" />
+                        <parameter name="NODEUC" value="NodeUC512.N" />
+                        <parameter name="NODEUC" value="NodeUC512.A3" />	
+					</include>
+				    <include name="tfConfigurationRequestWithIllegalData">
+						<parameter name="testId" value="LTE00219578"/>
+						<parameter name="description" value="Abis TF Configuration with illegal data"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration with illegal data" />
+                        <parameter name="NODEUC" value="NodeUC512.N" />	
+					</include>
+
+<!--				// This Test case should be removed. It is not possible to test this scenario with a GPS as external reference
+				 	<include name="tfConfigurationRequestFsOffset">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TF Configuration with defined FS offset and no Time Synchronization on the RBS"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration with defined FS offset and no Time Synchronization on the RBS" />
+                        <parameter name="NODEUC" value="NodeUC512.E1" />	
+					</include> -->
+
+					<include name="tfConfigurationRequestFsOffset4A1">
+						<parameter name="testId" value="LTE00219589"/>
+						<parameter name="description" value="Abis TF Configuration, result sent immediately"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration, result sent immediately" />
+                        <parameter name="NODEUC" value="NodeUC512.A1" />	
+					</include>
+					<include name="tfConfigurationRequestBigFsOffset">
+						<parameter name="testId" value="LTE00219580,LTE00223062"/>
+						<parameter name="description" value="Abis TF Configuration with defined a big FS offset and no Time Synchronization on the RBS"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration with defined a big FS offset and no Time Synchronization on the RBS" />
+                        <parameter name="NODEUC" value="NodeUC512.A8" />	
+					</include>
+					<include name="tfConfigurationRequestSmallOffset">
+						<parameter name="testId" value="LTE00219593"/>
+						<parameter name="description" value="NodeUC512.A2: Abis TF Configuration, result sent after FS Offset change"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="NodeUC512.A2: Abis TF Configuration, result sent after FS Offset change" />
+                        <parameter name="NODEUC" value="NodeUC512.A2" />	
+					</include>
+ 					<include name="tfConfigurationRequestSmallOffsetForMaster">
+						<parameter name="testId" value="LTE00224274"/>
+						<parameter name="description" value="NodeUC512.A2 and Non-UC requirement: timing drift speed is 10ns/s for Master"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="NodeUC512.A2 and Non-UC requirement: timing drift speed is 10ns/s for Master" />
+                        <parameter name="NODEUC" value="NodeUC512.A2" />	
+					</include>
+					<include name="txConfigurationRequest">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TX Configuration"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TX Configuration" />
+                        <parameter name="NODEUC" value="NodeUC601.N" />	
+					</include>
+					<include name="txConfigurationRequestInStateEnabledValid">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TX Configuration in state enabled"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TX Configuration in state enabled" />
+                        <parameter name="NODEUC" value="NodeUC601.A1" />	
+					</include>
+					<include name="txConfigurationRequestInStateEnabledInvalid">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TX Configuration in state enabled"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TX Configuration in state enabled" />
+                        <parameter name="NODEUC" value="NodeUC601.E2" />	
+					</include>
+		 				<include name="twoTxConfigReqWithSameTxAddress">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TX Configuration with same TX address"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TX Configuration with same TX address" />
+                        <parameter name="NODEUC" value="NodeUC601.E3 - TBD" />	
+					</include>
+ 					<include name="rxConfigurationRequest">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis RX Configuration"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis RX Configuration" />
+                        <parameter name="NODEUC" value="NodeUC606.N" />	
+					</include>
+					<include name="rxConfigurationRequestInStateEnabledValid">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Valid Abis RX Configuration in state enabled"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="AValid Abis RX Configuration in state enabled" />
+                        <parameter name="NODEUC" value="NodeUC606.A1" />	
+					</include>
+					<include name="rxConfigurationRequestInStateEnabledInvalid">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Invalid Abis RX Configuration in state enabled"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Invalid Abis RX Configuration in state enabled" />
+                        <parameter name="NODEUC" value="NodeUC606.E2" />	
+					</include>
+					<include name="tsConfigurationRequest_MainBCCHCombined">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration, combination MainBCCHCombined"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration, combination MainBCCHCombined" />
+                        <parameter name="NODEUC" value="NodeUC626.N" />	
+					</include>
+					<include name="tsConfigurationRequest_MainBCCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration, combination MainBCCH"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration, combination MainBCCH" />
+                        <parameter name="NODEUC" value="NodeUC626.N" />	
+					</include>
+					<include name="tsConfigurationRequest_OptionalBCCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration, combination OptionalBCCH"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration, combination OptionalBCCH" />
+                        <parameter name="NODEUC" value="NodeUC626.N" />	
+					</include>
+					<include name="tsConfigurationRequest_SDCCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration, combination SDCCH"/>					
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration, combination SDCCH" />
+                        <parameter name="NODEUC" value="NodeUC626.N" />	
+					</include>
+					<include name="tsConfigurationRequest_TCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration, combination TCH"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration, combination TCH" />
+                        <parameter name="NODEUC" value="NodeUC626.N" />	
+					</include>
+					<include name="tsConfigurationRequestInStateEnabledValid_TCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, valid configuration, combination TCH"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration in state ENABLED, valid configuration, combination TCH" />
+                        <parameter name="NODEUC" value="NodeUC626.A1" />	
+					</include>
+					<include name="tsConfigurationRequestInStateEnabledInvalid_TCH">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination TCH"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination TCH" />
+                        <parameter name="NODEUC" value="NodeUC626.A1" />	
+					</include>
+					<include name="tsConfigurationRequestInStateEnabledInvalid_MainBCCHCombined">
+						<parameter name="testId" value="LTE00207298"/>
+						<parameter name="description" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination MainBCCHCombined"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TS Configuration in state ENABLED, try to change parameters NOT allowed to be changed in state ENABLED, combination MainBCCHCombined" />
+                        <parameter name="NODEUC" value="NodeUC626.A1" />	
+					</include>
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.configurationrequest.AtConfigurationRequestTest">
+				<methods>
+				<include name="atConfigurationRequestInStateDisabled">
+						<parameter name="testId" value="LTE00207280"/>
+						<parameter name="description" value="Abis AT Configuration in state DISABLED, AT Data before first activation and then same and different data without active configuration"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis AT Configuration in state DISABLED, AT Data before first activation and then same and different data without active configuration" />
+						<parameter name="NODEUC" value="NodeUC645.N" />
+						<parameter name="NODEUC" value="NodeUC645.A2" />	
+					</include>
+					<include name="atConfigurationRejectInconsitentDataInStateDisabled">
+						<parameter name="testId" value="LTE00207280"/>
+						<parameter name="description" value="Abis AT Configuration in state DISABLED, inconsistent data"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis AT Configuration in state DISABLED, inconsistent data" />
+                        <parameter name="NODEUC" value="NodeUC645.E1" />	
+					</include>
+					<include name="atConfigurationRequestInStateEnabledThenDisabled">
+						<parameter name="testId" value="LTE00207280"/>
+						<parameter name="description" value="Abis AT Configuration in state ENABLED then DISABLED, same and different data"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis AT Configuration in state ENABLED then DISABLED, same and different data" />
+						<parameter name="NODEUC" value="NodeUC645.A1" />
+						<parameter name="NODEUC" value="NodeUC645.E2" />
+						<parameter name="NODEUC" value="NodeUC645.E3" />	
+					</include>
+					<include name="atConfigurationRequestInWrongSoScfState">
+                        <parameter name="testId" value="LTE00207280"/>
+                        <parameter name="description" value="Abis AT Configuration when SO SCF is in state RESET"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis AT Configuration when SO SCF is in state RESET" />
+                        <parameter name="NODEUC" value="NodeUC479.E2" />	
+                    </include>
+				</methods>
+			</class>
+			<!-- Temporarily removing not-applicable-as-is-test until CAT WP5689
+			<class name="com.ericsson.msran.test.grat.configurationrequest.ConfigurationRequestWithTwoSectorTest">
+				<methods>
+					<include name="reselectionTfMaster">
+						<parameter name="testId" value="LTE00223064"/>
+						<parameter name="description" value="Abis TF Configuration when reselect new Master"/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+                        <parameter name="FAJ" value="N/A" />
+                        <parameter name="Test slogan" value="Abis TF Configuration when reselect new Master" />
+                        <parameter name="NODEUC" value="NodeUC512.A9" />
+					</include>
+				</methods> 
+			</class>
+			-->
+		</classes>
+	</test>
+</suite>

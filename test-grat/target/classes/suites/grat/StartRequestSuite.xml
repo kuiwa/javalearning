@@ -1,0 +1,165 @@
+<suite name="StartRequestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+
+		<test name="Start Request Test">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.startrequest.StartRequestTest">
+				<methods>   
+					<include name="startRequestSoScf">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Start SP on SO SCF." />
+						<parameter name="NODEUC" value="NodeUC476.N" />						
+					</include>
+					<include name="startRequestSoScfNegotiationUnsuccessful">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation not successful."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Start SP on SO SCF, Negotiation not successful." />
+						<parameter name="NODEUC" value="NodeUC476.E1" />						
+					</include>
+					<include name="startRequestSoScfNegotiationTimeout">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation timeout."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Start SP on SO SCF, Negotiation timeout." />
+						<parameter name="NODEUC" value="NodeUC476.E2" />						
+					</include>
+					<include name="startRequestSoScfNegotiationNak">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis OML Start SP on SO SCF, Negotiation with negative acknowledgement."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML Start SP on SO SCF, Negotiation with negative acknowledgement." />
+						<parameter name="NODEUC" value="NodeUC476.E3" />						
+					</include>					
+					<include name="startRequestAoTf">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis TF Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Start." />
+						<parameter name="NODEUC" value="NodeUC509.N" />						
+					</include>
+					<include name="startRequestAoAt">
+						<parameter name="testId" value="LTE00207382"/>
+						<parameter name="description" value="Abis AT Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis AT Start." />
+						<parameter name="NODEUC" value="NodeUC644.N" />
+					</include>   
+				</methods>
+			</class>
+			<class name="com.ericsson.msran.test.grat.startrequest.StartRequestTrxMoTest">
+				<methods>
+					<include name="startRequestSoTrxcWithSoScfStarted">
+						<parameter name="testId" value="LTE00235105"/>
+						<parameter name="description" value="Abis TRXC Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TRXC Start." />
+						<parameter name="NODEUC" value="NodeUC652.N" />
+					</include>
+					<include name="startRequestAoTx">
+						<parameter name="testId" value="NodeUC598.N"/>
+						<parameter name="description" value="Abis TX Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Start." />
+						<parameter name="NODEUC" value="NodeUC598.N" />						
+					</include>
+					<include name="startRequestAoTxInStateEnabled">
+						<parameter name="testId" value="NodeUC598.E1"/>
+						<parameter name="description" value="Abis TX Start in state ENABLED."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TX Start in state ENABLED." />
+						<parameter name="NODEUC" value="NodeUC598.E1" />						
+					</include>
+					<include name="startRequestAoRx">
+						<parameter name="testId" value="NodeUC603.N"/>
+						<parameter name="description" value="Abis RX Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Start." />
+						<parameter name="NODEUC" value="NodeUC603.N" />						
+					</include>
+					<include name="startRequestAoRxInStateEnabled">
+						<parameter name="testId" value="NodeUC603.E1"/>
+						<parameter name="description" value="Abis RX Start in state ENABLED."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis RX Start in state ENABLED." />
+						<parameter name="NODEUC" value="NodeUC603.E1" />
+					</include>
+					<include name="startRequestAllAoTs">
+						<parameter name="testId" value="NodeUC624.N"/>
+						<parameter name="description" value="Abis TS Start."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Start." />
+						<parameter name="NODEUC" value="NodeUC624.N" />						
+					</include>
+					<include name="startRequestAoTsInStateEnabled">
+						<parameter name="testId" value="NodeUC624.E1"/>
+						<parameter name="description" value="Abis TS Start in state ENABLED."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TS Start in state ENABLED." />
+						<parameter name="NODEUC" value="NodeUC624.E1" />						
+					</include>
+ 					<!-- Removed until we find another way to trigger no sync on node -->
+					<!-- Current solution (remove sync MO's), means NC (hence even GRAT) does not start -->
+					<!--include name="startRequestAoTfNoSync">
+						<parameter name="testId" value="NodeUC509.E1"/>
+						<parameter name="description" value="Abis TF Start when RBS is not synchronized."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis TF Start when RBS is not synchronized." />
+						<parameter name="NODEUC" value="NodeUC509.E1" />						
+					</include-->
+ 				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Intervention in Start Request SP by Status Request and Reset Command">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.startrequest.StartRequestInterventionTest">
+				<methods>
+				<!-- Removed until Abisco and/or TC is fixed -->
+					<!-- <include name="startSoScfInterventionStatusRequest">
+						<parameter name="testId" value="NodeUC481.A1"/>
+						<parameter name="description" value="Abis OML downlink SP, intervention by Status Request EP."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML downlink SP, intervention by Status Request EP." />
+						<parameter name="NODEUC" value="NodeUC481.A1" />						
+					</include> -->
+					<include name="startSoScfInterventionResetCommand">
+						<parameter name="testId" value="NodeUC481.E2"/>
+						<parameter name="description" value="Abis OML downlink SP, intervention by Reset Command EP."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML downlink SP, intervention by Reset Command EP." />
+						<parameter name="NODEUC" value="NodeUC481.E2" />						
+					</include>
+					<include name="startSoScfInterventionAbortCommand">
+						<parameter name="testId" value="NodeUC481.E3"/>
+						<parameter name="description" value="Abis OML downlink SP, intervention by Abort Command EP."/>
+						<parameter name="QA" value="CONFIGURE_AND_UPGRADE" />
+						<parameter name="FAJ" value="N/A" />
+						<parameter name="Test slogan" value="Abis OML downlink SP, intervention by Abort Command EP." />
+						<parameter name="NODEUC" value="NodeUC481.E3" />					   
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

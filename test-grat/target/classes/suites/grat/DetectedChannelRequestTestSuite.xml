@@ -1,0 +1,17 @@
+<suite name="DetectedChannelRequestTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Detected Channel Request Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.channelrequest.DetectedChannelRequest">
+				<methods>
+					<include name="detectedChannelRequestTest" />
+                         <parameter name="testId" value="GRAT-03.02:027"/>
+					     <parameter name="description" value="Verify the channel request function"/>
+					     <parameter name="useDefaultSector" value="true"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

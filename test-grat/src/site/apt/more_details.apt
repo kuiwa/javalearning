@@ -1,0 +1,17 @@
+What is Dura JCAT?
+
+	DURA JCAT is a container product for msran-jcat-extension (MJE) and resource-manager (RM). It doesn't contain code, only documentations like:
+	 
+	 * {{{https://wiki.lmera.ericsson.se/wiki/DURA_JCAT_Wiki/}DURA JCAT Wiki}}
+	 
+	 * Eridoc Documentation
+	 
+	 * Joint Javadoc for MJE + RM (See menu)
+	 
+	
+	 This site is created for MJE, for RM related information please visit the {{{http://jcat.cn.ao.ericsson.se:8880/resource-manager/latest/}Resource Manager Maven Site}}!
+	 
+
+Including images:
+	 
+[./images/include_an_image.png]

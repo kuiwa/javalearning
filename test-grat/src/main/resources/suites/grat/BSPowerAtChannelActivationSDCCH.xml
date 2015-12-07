@@ -1,0 +1,17 @@
+<suite name="BSPowerAtChannelActivationSDCCHSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener"/>
+	</listeners>
+	<test name="BSPowerAtChannelActivationSDCCH">
+		<classes>
+			<class name="com.ericsson.msran.test.grat.bspowercontrol.BSPowerAtChannelActivationSDCCH">
+				<methods>
+					<include name="bsPowerAtChannelActivationSDCCH">
+						<parameter name="testId" value="LTE002-?"/>
+						<parameter name="description" value="Verifies BS power control at Channel Activation (SDCCH)."/>
+					</include>					 
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

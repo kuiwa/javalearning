@@ -1,0 +1,27 @@
+<suite name="CascadedRusTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+	<test name="CascadedRusTestSuite - Traffic on cascaded RUS test">	
+		<classes>	
+ 			<class name="com.ericsson.msran.test.grat.channelrequest.DetectedChannelRequest">
+				<methods>
+					<include name="detectedChannelRequestTest">
+                    	<parameter name="testId" value="GRAT-03.02:027"/>
+						<parameter name="description" value="CascadedRusTestSuite - Traffic on cascaded RUS test - Verify the channel request function"/>
+						<parameter name="useDefaultSector" value="false"/>
+					</include>     
+				</methods>
+			</class>
+ 			<class name="com.ericsson.msran.test.grat.immediateassign.ImmediateAssignmentExtended">
+				<methods>
+					<include name="immediateAssignmentExtendedTest">
+                    	<parameter name="testId" value="GRAT-03.01:14"/>
+						<parameter name="description" value="CascadedRusTestSuite - Traffic on cascaded RUS test - Verify the Immediate Assignment Extended function"/>
+						<parameter name="useDefaultSector" value="false"/>
+					</include>     
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

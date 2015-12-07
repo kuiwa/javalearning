@@ -1,0 +1,53 @@
+<suite name="LinkEstablishIndicationNorEstTestSuite" parallel="false" rbsGeneration="gen2" standard="GRAT">
+	<listeners>
+		<listener class-name="com.ericsson.msran.jcat.MsranTestNgListener" />
+	</listeners>
+  	<test name="Link Establish Indication Normal Establishment Test">
+		<classes>
+ 			<class name="com.ericsson.msran.test.grat.linkestablishindication.LinkEstablishIndicationNorEst"> 
+				<methods>
+					<include name="linkEstablishIndicationNorEstSubTc1Test" >
+                         <parameter name="testId" value="LTE00230712"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Normal Establishment, channel Combination (i)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Verify LinkEstablishIndication Normal Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+ 					</include> 
+ 					<include name="linkEstablishIndicationNorEstSubTc2Test" >
+                         <parameter name="testId" value="LTE00230712"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Normal Establishment, channel Combination (ii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Verify LinkEstablishIndication Normal Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+ 					</include>
+ 					<include name="linkEstablishIndicationNorEstSubTc3Test" >
+                         <parameter name="testId" value="LTE00230712"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Normal Establishment, channel Combination (v)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Normal Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+ 					</include>
+ 					<include name="linkEstablishIndicationNorEstSubTc4Test" >
+                         <parameter name="testId" value="LTE00230712"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Normal Establishment, channel Combination (vii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Normal Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+ 					</include>
+ 					<include name="linkEstablishIndicationNorEstSubTc5Test" >
+                         <parameter name="testId" value="LTE00230712"/>
+					     <parameter name="description" value="Verify LinkEstablishIndication Normal Establishment, channel Combination (viii)"/>
+					     <parameter name="QA" value="FUNCTIONALITY" />
+					     <parameter name="FAJ" value="N/A" />
+					     <parameter name="Test slogan" value="Link Establish Indication Normal Establishment" />
+					     <parameter name="NODEUC" value="N/A" />
+ 					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
