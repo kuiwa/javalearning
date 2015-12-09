@@ -22,6 +22,7 @@ public class Average {
             System.out.printf("Average value = %.2f%n", sum / count);
         }   catch (InputMismatchException ex) {
             System.out.println("must input a inter");
+            //test git diff
         }
     }
 
